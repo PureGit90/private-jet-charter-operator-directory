@@ -48,7 +48,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pu
         <tbody>
           {lightRows.map((r) => (
             <tr>
-              <th scope="row"><a href={`/listings/${r.id}/`}>{r.name}</a></th>
+              <th scope="row"><a href={`/listings/${r.id}/`}>{r.name}</a>{lightRows.filter((x) => x.id === r.id).length > 1 && <span class="small"><br />{r.rate.label}</span>}</th>
               <td data-label="Published" class="num">{fmtRange(r.rate.low, r.rate.high)}</td>
               <td data-label="Basis"><span class={`badge ${r.basis}`}>{BASIS[r.basis].label}</span></td>
               <td data-label="Range">
@@ -65,7 +65,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pu
 
     <h2>Every category</h2>
     <div class="table-wrap">
-      <table>
+      <table class="dense">
         <caption>Published hourly rates by provider and aircraft type (USD)</caption>
         <thead>
           <tr><th scope="col">Provider</th><th scope="col">Basis</th>{shown.map((c) => <th scope="col">{c.label}</th>)}</tr>
@@ -86,7 +86,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pu
     <h2>Spread by category</h2>
     <div class="table-wrap">
       <table class="stack">
-        <caption>Lowest and highest published figure in each category (single-category rows only)</caption>
+        <caption>Lowest and highest published figure in each category (single-category rows only; mixes base, all-in and planning figures)</caption>
         <thead><tr><th scope="col">Aircraft type</th><th scope="col">Providers</th><th scope="col">Lowest low</th><th scope="col">Highest high</th></tr></thead>
         <tbody>
           {stats.filter((s) => s.providers > 0).map((s) => (

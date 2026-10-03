@@ -103,8 +103,8 @@ ul.sources { padding-left: 1.2em; font-size: 0.92rem; overflow-wrap: anywhere; }
 .prose.wide { max-width: var(--max); }
 .prose ul, .prose ol { padding-left: 1.2em; }
 .prose li { margin-bottom: 0.4em; }
-.stat { display: flex; gap: 24px; flex-wrap: wrap; margin: 20px 0; }
-.stat div { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; min-width: 190px; }
+.stat { display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0; }
+.stat div { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; min-width: 150px; flex: 1 1 150px; max-width: 250px; }
 .stat strong { display: block; font-size: 1.6rem; line-height: 1.1; }
 .stat span { font-size: 0.88rem; color: var(--muted); }
 
@@ -118,3 +118,6 @@ ul.sources { padding-left: 1.2em; font-size: 0.92rem; overflow-wrap: anywhere; }
 .bar .fill.all-in, .bar .fill.planning { background: #c2410c; }
 .yes { color: var(--ok); font-weight: 700; }
 .no { color: var(--muted); }
+table.dense { font-size: 0.82rem; }
+table.dense th, table.dense td { padding: 8px 9px; }
+table.dense thead th { font-size: 0.72rem; }
