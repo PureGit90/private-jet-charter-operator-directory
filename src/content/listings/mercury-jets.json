@@ -1,0 +1,76 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The range for \"mid-sized or super-mid-sized\" is a single band, so it cannot tell you which of the two costs more."
+  ],
+  "feesNamed": [
+    "Federal excise tax",
+    "Segment fees",
+    "Boarding and airport taxes",
+    "Taxes and fees outside the U.S.",
+    "Overnight fees",
+    "International handling",
+    "Landing and handling fees",
+    "Fuel surcharge based on distance"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprop or executive light jet",
+      "low": 1800,
+      "high": 3500,
+      "note": "One range given for both.",
+      "shared": true
+    },
+    {
+      "category": "light",
+      "label": "Turboprop or executive light jet",
+      "low": 1800,
+      "high": 3500,
+      "note": "One range given for both.",
+      "shared": true
+    },
+    {
+      "category": "midsize",
+      "label": "Mid-sized or super-mid-sized jet",
+      "low": 3500,
+      "high": 6500,
+      "note": "One range given for both.",
+      "shared": true
+    },
+    {
+      "category": "super-midsize",
+      "label": "Mid-sized or super-mid-sized jet",
+      "low": 3500,
+      "high": 6500,
+      "note": "One range given for both.",
+      "shared": true
+    },
+    {
+      "category": "heavy",
+      "label": "Large jet",
+      "low": 6500,
+      "high": 12500
+    }
+  ],
+  "name": "Mercury Jets",
+  "url": "https://www.mercuryjets.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its cost page says: \"As a charter broker, Mercury Jets compares aircraft and rates across a global network of FAA Part 135-certified operators.\" Its homepage says it holds the ARGUS Certified Charter Broker designation.",
+  "summary": "Charter broker that publishes hourly ranges by trip range and aircraft type, and lists the charges it leaves out of them.",
+  "differentiator": "Its page says the rates cover aircraft, crew and fuel only and then lists what is extra: federal excise tax, segment fees, boarding and airport taxes, overnight fees, international handling and landing fees. That separation is explicit, where several providers blur it.",
+  "publishes": "category-ranges",
+  "rateBasis": "base",
+  "priceNote": "Hourly ranges from $1,800 to $12,500 depending on aircraft. It also groups flights by distance: short range $1,800 to $3,500, mid range $3,500 to $6,500, long range $6,500 to $12,500.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Says it works with FAA Part 135-certified operators and presents several aircraft options. The pages we read do not say whether the operator is named before booking.",
+  "bestFor": "Buyers who want a clear list of what sits outside the hourly rate before asking for a quote.",
+  "skipIf": "You want one rate per aircraft category. Two of its ranges cover two categories at once.",
+  "sources": [
+    "https://www.mercuryjets.com/private-jet-charter-cost-estimator/",
+    "https://www.mercuryjets.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

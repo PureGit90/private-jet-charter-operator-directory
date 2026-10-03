@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CATEGORIES, ROLES, PUBLISHES, BASIS } from '../../lib/site';
+import { alpha } from '../../lib/rates';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { slug: c.slug }, props: { cat: c } }));
+}
+const { cat } = Astro.props;
+const all = (await getCollection('listings')).sort(alpha);
+const listings = all.filter((l) => l.data.category === cat.name);
+---
+<BaseLayout title={cat.name} description={cat.intro}>
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / {cat.name}</p>
+    <h1>{cat.name}</h1>
+    <p class="lead">{cat.intro}</p>
+    <div class="table-wrap">
+      <table class="stack">
+        <caption>{listings.length} providers, alphabetical</caption>
+        <thead><tr><th scope="col">Provider</th><th scope="col">Says it is a</th><th scope="col">Publishes</th><th scope="col">Hourly basis</th></tr></thead>
+        <tbody>
+          {listings.map((l) => (
+            <tr>
+              <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a></th>
+              <td data-label="Says it is a"><span class={`badge ${l.data.role}`}>{ROLES[l.data.role].label}</span></td>
+              <td data-label="Publishes">{PUBLISHES[l.data.publishes].label}</td>
+              <td data-label="Hourly basis"><span class={`badge ${l.data.rateBasis}`}>{BASIS[l.data.rateBasis].label}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      {listings.map((l) => <li><strong><a href={`/listings/${l.id}/`}>{l.data.name}</a>:</strong> {l.data.summary}</li>)}
+    </ul>
+  </div>
+</BaseLayout>

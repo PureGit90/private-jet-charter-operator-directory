@@ -1,0 +1,82 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "Rates come from its own bookings, so they describe what it sold, not what the whole market charges.",
+    "The page says there are no hidden fees. The post-flight items it lists, de-icing and pet cleaning, are charged as incurred."
+  ],
+  "feesNamed": [
+    "7.5% federal excise tax",
+    "Domestic segment fee (stated as $5.30 per passenger)",
+    "De-icing and pet cleaning, charged as incurred"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprops",
+      "low": 2300,
+      "high": 3500
+    },
+    {
+      "category": "very-light",
+      "label": "Very light jets",
+      "low": 2900,
+      "high": 3400
+    },
+    {
+      "category": "light",
+      "label": "Light jets",
+      "low": 3750,
+      "high": 4200
+    },
+    {
+      "category": "light",
+      "label": "Super light jets",
+      "low": 4200,
+      "high": 4600
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jets",
+      "low": 4700,
+      "high": 5500
+    },
+    {
+      "category": "super-midsize",
+      "label": "Super midsize jets",
+      "low": 6200,
+      "high": 7500
+    },
+    {
+      "category": "heavy",
+      "label": "Large jets",
+      "low": 8500,
+      "high": 10000
+    },
+    {
+      "category": "ultra-long-range",
+      "label": "Ultra long range jets",
+      "low": 12000,
+      "high": 17000
+    }
+  ],
+  "name": "Paramount Business Jets",
+  "url": "https://www.paramountbusinessjets.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its charter page says: \"Paramount Business Jets is an independent charter broker. We don't own aircraft.\"",
+  "summary": "Charter broker that publishes a nine-row hourly table by aircraft type plus sample route prices.",
+  "differentiator": "Names the tax add-ons by amount (7.5% excise tax and a $5.30 per-passenger segment fee, which matches the FAA's 2026 rate) and says what the hourly rate already includes: aircraft, crew, fuel with standard surcharges, and insurance. Few providers state both.",
+  "publishes": "category-ranges",
+  "rateBasis": "base",
+  "priceNote": "Hourly table plus sample trip prices, for example New York to Miami at $17,000 in a light jet and $23,000 in a midsize jet. The page says every rate is drawn from its own booking database.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Says it vets operators and runs an ARGUS TripCHEQ or Wyvern PASS report on the assigned aircraft, crew and operator before each departure. The pages we read do not say whether the operator is named in the quote before you book.",
+  "bestFor": "Buyers who want to check a quote against a published table that says what is and is not included.",
+  "skipIf": "You need the operator named before you request a quote. The pages we read do not say when that happens.",
+  "sources": [
+    "https://www.paramountbusinessjets.com/private-jet-rental-cost",
+    "https://www.paramountbusinessjets.com/private-jet-charter"
+  ],
+  "operatorNamed": "not-stated"
+}

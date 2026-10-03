@@ -1,0 +1,27 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The disclosure promise is its own statement. We have not requested a quote to see it in practice."
+  ],
+  "feesNamed": [],
+  "rates": [],
+  "name": "Victor",
+  "url": "https://www.flyvictor.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its homepage refers to \"your dedicated broker\" and says it works only with AOC-certified operators.",
+  "summary": "Charter broker built around naming the operator and aircraft in the quote.",
+  "differentiator": "The clearest operator-disclosure promise among the providers we read: it says it always discloses the operator name, aircraft details and tail number before you book, and passes on the operator's own cancellation policy. It calls itself the only on-demand provider to do so, which we did not test.",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "The homepage has a search form with a \"Show estimates\" button and publishes no hourly rates. It says quotes show fuel burn estimates.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "States that it always discloses the operator name, aircraft details and tail number before booking, and passes on the operator's cancellation terms.",
+  "bestFor": "Buyers for whom knowing the actual operator and tail number before paying is the deciding factor.",
+  "skipIf": "You want a published hourly rate to compare against.",
+  "sources": [
+    "https://www.flyvictor.com/"
+  ],
+  "operatorNamed": "says-yes"
+}

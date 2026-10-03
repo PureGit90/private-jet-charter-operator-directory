@@ -1,0 +1,27 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The $11,000 starting price is not tied to an aircraft class on the page."
+  ],
+  "feesNamed": [],
+  "rates": [],
+  "name": "VistaJet",
+  "url": "https://www.vistajet.com/en-us/",
+  "category": "Operators with their own fleet",
+  "role": "operator",
+  "roleBasis": "Its U.S. page says VistaJet US customers get access to \"the iconic silver and red fleet of global VistaJet aircraft\", sold mainly through memberships (Program, Corporate Program and VJ25).",
+  "summary": "Fleet-based company that sells memberships and quotes charter from a single starting price.",
+  "differentiator": "Publishes just one charter figure: prices \"are subject to the market rate and start from $11,000 per hour\". The main product on the page is membership, not on-demand charter by the hour.",
+  "publishes": "from-prices",
+  "rateBasis": "from",
+  "priceNote": "The U.S. charter form says \"Private jet charter flight prices are subject to the market rate and start from $11,000 per hour\". The page does not tie that figure to an aircraft class.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Describes a single-brand fleet, so the aircraft are its own. The pages we read do not describe how charter requests are fulfilled outside that fleet.",
+  "bestFor": "Buyers weighing a membership on one branded fleet against on-demand charter.",
+  "skipIf": "You want an hourly rate card by aircraft type.",
+  "sources": [
+    "https://www.vistajet.com/en-us/"
+  ],
+  "operatorNamed": "not-stated"
+}

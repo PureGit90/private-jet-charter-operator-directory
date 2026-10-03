@@ -1,0 +1,27 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "\"Largest\" is the company's own claim."
+  ],
+  "feesNamed": [],
+  "rates": [],
+  "name": "Air Charter Service",
+  "url": "https://www.aircharterservice.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its homepage calls it \"The largest private charter brokerage in the world\" and cites 30+ years of experience.",
+  "summary": "Large global charter brokerage that takes requests by quote form and publishes no charter price on its homepage.",
+  "differentiator": "Quote only. The pages we read carry no hourly rate or sample trip price, so there is nothing published to hold its quote against. It also lists empty legs and a jet card.",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "The pages we read show \"Get a Quote\" and \"Inquire Now\" forms and no dollar figure for charter.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who already plan to collect several written quotes and want a very large broker among them.",
+  "skipIf": "You want a price before you share trip details.",
+  "sources": [
+    "https://www.aircharterservice.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

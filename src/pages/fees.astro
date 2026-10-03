@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { DATA_DATE_LABEL } from '../lib/site';
+import { alpha, FEE_TESTS, names } from '../lib/rates';
+
+const listings = (await getCollection('listings')).sort(alpha);
+const counts = FEE_TESTS.map((f) => ({ ...f, n: listings.filter((l) => names(l, f.test)).length }));
+const noneNamed = listings.filter((l) => l.data.feesNamed.length === 0).length;
+---
+<BaseLayout title="What is charged on top of the hourly rate" description="The taxes and fees that sit on top of a private jet charter hourly rate, which providers name them, and the FAA's 2026 federal rates.">
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / Fees</p>
+    <h1>What is charged on top of the hourly rate</h1>
+    <p class="lead">An hourly rate is rarely the invoice. These are the usual additions, which providers name them on the pages we read, and the federal tax figures checked against the FAA.</p>
+
+    <h2>The two federal charges, checked</h2>
+    <div class="two">
+      <div class="card"><strong>7.5% excise tax</strong><p>The FAA's 2026 tax structure lists a 7.5 percent domestic passenger ticket tax. Several providers add it to charter invoices. One, Linear Air, says air taxis are generally not subject to it. Whether it applies depends on the aircraft and the trip.</p></div>
+      <div class="card"><strong>$5.30 segment fee</strong><p>The FAA lists a domestic flight segment tax of $5.30 per passenger per segment, effective January 1, 2026 and indexed to inflation. Paramount Business Jets and JetLevel state $5.30. Stratos Jets states $4.50 and Linear Air states $1.50 to $4.50.</p></div>
+    </div>
+    <p class="small">Source: <a href="https://www.faa.gov/about/budget/aatf/Current-Aviation-Excise-Tax-Structure-and-Rates-2026.pdf">FAA, Current Aviation Excise Tax Structure and Rates 2026</a>, read {DATA_DATE_LABEL}. This site does not give tax advice. Ask your provider which taxes apply to your trip and to show them as separate lines.</p>
+
+    <h2>The usual additions</h2>
+    <ul>
+      <li><strong>Daily minimum.</strong> Many aircraft carry a minimum number of billable hours per day, often 2. A 1-hour flight can bill as 2 hours. evoJets and JetLevel both describe this.</li>
+      <li><strong>Positioning.</strong> If the aircraft is not at your departure airport, flying it there is billable, either as a flat fee or at the hourly rate. Linear Air says it is typically the hourly rate. Amalfi Jets says billable time includes positioning and minimums.</li>
+      <li><strong>Landing, ramp and handling.</strong> Airport and FBO charges vary by airport and time of day. Stratos Jets gives $100 to $1,500 for landing and $100 to $500 for handling per flight.</li>
+      <li><strong>Fuel surcharge.</strong> Stratos Jets says its surcharge starts around $300 an hour when applied. JetLevel gives $200 to $2,250 an hour.</li>
+      <li><strong>Crew.</strong> Overnight and per diem costs when the crew stays with the aircraft. Linear Air gives $750 to $2,500 per overnight and $200 to $400 per crew member per day. JetLevel gives crew fees of $600 to $2,000.</li>
+      <li><strong>Seasonal and as-incurred items.</strong> De-icing, catering, special-event surcharges and international handling. Linear Air gives de-icing at $1,300 to $13,000.</li>
+    </ul>
+
+    <h2>Which providers name which charges</h2>
+    <p>Counted from the lists on each provider's page, as we read them on {DATA_DATE_LABEL}. A blank means the charge is not named on the pages we read, not that it is not charged.</p>
+    <div class="table-wrap">
+      <table>
+        <caption>Charges named on the pages we read</caption>
+        <thead><tr><th scope="col">Provider</th>{FEE_TESTS.map((f) => <th scope="col">{f.label}</th>)}</tr></thead>
+        <tbody>
+          {listings.map((l) => (
+            <tr>
+              <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a></th>
+              {FEE_TESTS.map((f) => <td>{names(l, f.test) ? <span class="yes">Named</span> : <span class="no">-</span>}</td>)}
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr><th scope="row">Providers naming it</th>{counts.map((c) => <td><strong>{c.n}</strong> of {listings.length}</td>)}</tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="small">{noneNamed} of {listings.length} providers name no specific charge on the pages we read.</p>
+
+    <h2>What to ask for</h2>
+    <ul>
+      <li>A written quote that lists the aircraft price, taxes, each fee and the total as separate lines.</li>
+      <li>Whether the hourly figure is a base rate or all-in, and how many billable hours the trip uses.</li>
+      <li>What is charged if the trip changes, and what is charged after the flight.</li>
+    </ul>
+  </div>
+</BaseLayout>

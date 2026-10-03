@@ -1,0 +1,65 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "Its own text and its table do not agree on light jet pricing."
+  ],
+  "feesNamed": [],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprop",
+      "low": 4000,
+      "high": null
+    },
+    {
+      "category": "light",
+      "label": "Light jet",
+      "low": 4500,
+      "high": null
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jet",
+      "low": 7000,
+      "high": null
+    },
+    {
+      "category": "super-midsize",
+      "label": "Super midsize jet",
+      "low": 9500,
+      "high": null
+    },
+    {
+      "category": "heavy",
+      "label": "Heavy jet",
+      "low": 11500,
+      "high": null
+    },
+    {
+      "category": "ultra-long-range",
+      "label": "Ultra long range jet",
+      "low": 14000,
+      "high": null
+    }
+  ],
+  "name": "JetFinder",
+  "url": "https://www.jetfinder.com/",
+  "category": "Brokers and marketplaces",
+  "role": "marketplace",
+  "roleBasis": "Says it matches you \"from our network of over 25,000 aircraft\". Its pages also show an \"Our Fleet\" gallery and a jet card. The pages we read do not say plainly whether it owns or operates aircraft.",
+  "summary": "Aircraft network with a cost page that shows starting hourly prices by class.",
+  "differentiator": "Publishes \"From\" hourly prices for six classes, from $4,000 for a turboprop to $14,000 for an ultra long range jet. Its own text on the same page says rentals run \"$2,000 to $15,000+\" an hour and uses a $2,000-an-hour light jet in an example, while its table starts light jets at $4,500.",
+  "publishes": "from-prices",
+  "rateBasis": "from",
+  "priceNote": "Starting hourly prices by class, plus route price ranges on the cost page. The page does not say what the starting prices include.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who want a quick starting price per class.",
+  "skipIf": "You need to know what the starting price includes, or whether JetFinder operates aircraft itself.",
+  "sources": [
+    "https://www.jetfinder.com/private-jet-charter-cost/",
+    "https://www.jetfinder.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

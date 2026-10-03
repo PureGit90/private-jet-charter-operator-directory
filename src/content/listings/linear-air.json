@@ -1,0 +1,74 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "It states the segment tax as $1.50 to $4.50 per passenger. The FAA lists $5.30 for 2026.",
+    "The large-jet row runs $4,000 to $10,000 an hour, which is a very wide band."
+  ],
+  "feesNamed": [
+    "7.5% federal excise tax (says air taxis are generally not subject to it)",
+    "Domestic segment tax (stated as $1.50 to $4.50 per passenger)",
+    "Crew overnight fee ($750 to $2,500)",
+    "Crew per diem ($200 to $400 per crew member)",
+    "Wait time fee ($50 an hour)",
+    "Short leg fee",
+    "Repositioning (typically the hourly rate)",
+    "De-icing ($1,300 to $13,000)"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprop (Cirrus SR-22)",
+      "low": 2000,
+      "high": 2800,
+      "note": "Market guide table, not its own price list."
+    },
+    {
+      "category": "very-light",
+      "label": "Personal jet (Embraer Phenom 100)",
+      "low": 2000,
+      "high": 4000,
+      "note": "Market guide table, not its own price list."
+    },
+    {
+      "category": "light",
+      "label": "Light jet (Embraer Phenom 300)",
+      "low": 2900,
+      "high": 5800,
+      "note": "Market guide table, not its own price list."
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jet (Cessna Citation X)",
+      "low": 4000,
+      "high": 9000,
+      "note": "Market guide table, not its own price list."
+    },
+    {
+      "category": "heavy",
+      "label": "Large jet (Gulfstream G6)",
+      "low": 4000,
+      "high": 10000,
+      "note": "Market guide table, not its own price list."
+    }
+  ],
+  "name": "Linear Air",
+  "url": "https://www.linearair.com/",
+  "category": "Brokers and marketplaces",
+  "role": "marketplace",
+  "roleBasis": "Its homepage offers \"Find and book private charter flights anywhere\", cites \"7000+ available aircraft\" and frames itself against \"charter broker hassles\". It does not say plainly whether it operates aircraft.",
+  "summary": "Instant-booking charter site that prices each trip all-in and lists typical add-on fees with dollar ranges.",
+  "differentiator": "Says \"all costs are included in the price you see\" instead of an hourly rate, and prints dollar ranges for crew overnight fees, per diem, wait time, de-icing and repositioning that most providers describe only in words.",
+  "publishes": "category-ranges",
+  "rateBasis": "unstated",
+  "priceNote": "The hourly table is a general market guide on its how-it-works page. Its own pricing is all-inclusive per trip and shown after a search.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who want an all-in trip price at search time and a list of typical add-on fees.",
+  "skipIf": "You want its own hourly rate card. The table is a market guide.",
+  "sources": [
+    "https://www.linearair.com/how-it-works/how-much-does-it-cost-to-fly-private/",
+    "https://www.linearair.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

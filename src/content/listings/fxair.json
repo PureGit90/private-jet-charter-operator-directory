@@ -1,0 +1,37 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The old PrivateFly rates page is still live and undated."
+  ],
+  "feesNamed": [
+    "All fees and positioning included in the booked price (older PrivateFly page)"
+  ],
+  "rates": [
+    {
+      "category": "light",
+      "label": "Light cabin (6 to 7 passengers)",
+      "low": 6500,
+      "high": null
+    }
+  ],
+  "name": "FXAIR (formerly PrivateFly)",
+  "url": "https://www.fxair.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Calls itself a \"Premium, On-Demand Charter Provider\" with \"an extensive network of elite aviation providers\" and its own FXSelect aircraft program. PrivateFly pages now say PrivateFly is becoming FXAIR. The pages we read do not say whether it operates aircraft itself.",
+  "summary": "Rebranded charter provider with a starting price for light jets and an older undated PrivateFly rate page.",
+  "differentiator": "Shows how published figures age: a current \"starting from $6,500 an hour\" for light jets, next to an undated PrivateFly page with single-aircraft hourly rates from $2,037 to $8,841. Only the current figure is treated as live here.",
+  "publishes": "from-prices",
+  "rateBasis": "from",
+  "priceNote": "Older PrivateFly page, undated and carrying an FXAIR banner, lists USD hourly rates by aircraft: Citation Mustang $2,037, King Air 200 $2,116, Citation XLS $4,207, Learjet 45 $4,685, Legacy 600 $7,060, Global Express $8,841. It says booked prices are fully inclusive of fees and positioning. Those rates are not in the comparison table because the page has no date.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who want a branded, membership-capable provider and a starting price to anchor on.",
+  "skipIf": "You need a full hourly rate card. Only a light-jet starting price is current.",
+  "sources": [
+    "https://www.fxair.com/",
+    "https://www.privatefly.com/aircraft-charter/hourly-rates-for-private-jets.html"
+  ],
+  "operatorNamed": "not-stated"
+}

@@ -1,0 +1,87 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The data is the broker's own and the page does not give a date for it.",
+    "Because the figures include positioning and minimums, they are not directly comparable with base-rate tables."
+  ],
+  "feesNamed": [
+    "Fuel surcharge ($200 to $2,250 an hour, as stated)",
+    "Crew fees ($600 to $2,000, as stated)",
+    "Daily minimum (most aircraft 2 hours)",
+    "Short leg fees",
+    "7.5% federal excise tax",
+    "Segment fee ($5.30 per passenger per segment in 2026)",
+    "Positioning"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprop",
+      "low": 4719,
+      "high": 6496,
+      "note": "Median $5,577 an hour, 315 quotes."
+    },
+    {
+      "category": "very-light",
+      "label": "Very light jet",
+      "low": 4906,
+      "high": 7093,
+      "note": "Median $6,175 an hour, 65 quotes."
+    },
+    {
+      "category": "light",
+      "label": "Light jet",
+      "low": 6754,
+      "high": 8814,
+      "note": "Median $7,714 an hour, 453 quotes."
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jet",
+      "low": 7377,
+      "high": 9575,
+      "note": "Median $8,364 an hour, 400 quotes."
+    },
+    {
+      "category": "super-midsize",
+      "label": "Super midsize jet",
+      "low": 8807,
+      "high": 12101,
+      "note": "Median $10,055 an hour, 338 quotes."
+    },
+    {
+      "category": "heavy",
+      "label": "Heavy jet",
+      "low": 10277,
+      "high": 15436,
+      "note": "Median $12,644 an hour, 258 quotes."
+    },
+    {
+      "category": "ultra-long-range",
+      "label": "Ultra long range jet",
+      "low": 13213,
+      "high": 18545,
+      "note": "Median $15,749 an hour, 124 quotes."
+    }
+  ],
+  "name": "JetLevel",
+  "url": "https://www.jetlevel.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its pricing page says: \"JetLevel is a broker. We price real trips across many operators every day.\"",
+  "summary": "Broker that publishes median all-in trip prices from its own quote data, with sample sizes.",
+  "differentiator": "The only one of the 22 providers we read that publishes total-trip medians with sample sizes (3,220 quotes, 500 operators, 210 aircraft models) and explains why its hourly figures are higher than advertised base rates: they include positioning, crew, fees and tax. The dataset is its own and the page does not date it.",
+  "publishes": "all-in-medians",
+  "rateBasis": "all-in",
+  "priceNote": "Hourly figures are the total quoted trip price divided by flight time, so they include positioning, crew expenses, landing and handling fees and the 7.5% federal excise tax. It also publishes one-way and round-trip medians by distance and aircraft class.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who want a realistic total to expect rather than a base rate, and want to see how many quotes sit behind each number.",
+  "skipIf": "You want base hourly rates. Its figures are not base rates.",
+  "sources": [
+    "https://www.jetlevel.com/cost-of-chartering-a-private-jet",
+    "https://www.jetlevel.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

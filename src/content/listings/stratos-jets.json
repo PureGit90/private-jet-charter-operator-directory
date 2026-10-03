@@ -1,0 +1,78 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The same page says a turboprop charter \"starts at around $2,000 an hour\" and a heavy jet is \"closer to $10,000 an hour\". Its table shows $4,000 to $4,900 and $15,077 to $16,664.",
+    "It states the segment fee as $4.50 per passenger. The FAA lists $5.30 for 2026."
+  ],
+  "feesNamed": [
+    "Landing fees ($100 to $1,500 per flight, as stated)",
+    "Ramp and handling fees ($100 to $500)",
+    "Segment fee (stated as $4.50 per passenger)",
+    "Federal excise tax",
+    "Fuel surcharge (starts around $300 an hour when applicable)"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "TurboProp",
+      "low": 4000,
+      "high": 4900
+    },
+    {
+      "category": "very-light",
+      "label": "Very Light Jets",
+      "low": 5500,
+      "high": 6800
+    },
+    {
+      "category": "light",
+      "label": "Light Jets",
+      "low": 8929,
+      "high": 9868
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize Jets",
+      "low": 9793,
+      "high": 10824
+    },
+    {
+      "category": "super-midsize",
+      "label": "Super Midsize Jets",
+      "low": 11786,
+      "high": 13027
+    },
+    {
+      "category": "heavy",
+      "label": "Heavy",
+      "low": 15077,
+      "high": 16664
+    },
+    {
+      "category": "ultra-long-range",
+      "label": "Ultra Long Range",
+      "low": 15200,
+      "high": 18500
+    }
+  ],
+  "name": "Stratos Jets",
+  "url": "https://www.stratosjets.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its homepage calls it an \"ARGUS-Certified Broker\" and describes \"brokering on-demand charter flights\".",
+  "summary": "Charter broker with a seven-row hourly table and an itemized fee list, at the high end of the published ranges.",
+  "differentiator": "Among the highest hourly ranges we read from any provider, and the page does not say whether they are base or all-in, which changes how to read the gap with the lower tables. It lists fee ranges for landing, handling, fuel and segment fees.",
+  "publishes": "category-ranges",
+  "rateBasis": "unstated",
+  "priceNote": "The page says a membership lets you lock an hourly rate across five aircraft categories and pay as you fly.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Says it runs an ARGUS CHEQ report on the aircraft before presenting a quote. The pages we read do not say whether the operator is named.",
+  "bestFor": "Buyers who want fee ranges laid out and are comparing a membership against on-demand.",
+  "skipIf": "You are using its table as a base rate to compare against other base-rate tables. The basis is not stated.",
+  "sources": [
+    "https://www.stratosjets.com/why-stratos/pricing/",
+    "https://www.stratosjets.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BASIS, CONTACT_EMAIL, DATA_DATE_LABEL } from '../lib/site';
+
+const listings = await getCollection('listings');
+---
+<BaseLayout title="How we compare" description="How this site reads private jet charter providers' pages, what the labels mean, what we have not done, and who is not included.">
+  <div class="wrap prose">
+    <p class="crumbs"><a href="/">Home</a> / How we compare</p>
+    <h1>How we compare</h1>
+    <p class="lead">This site records what private jet charter providers publish about price and about what they are, and nothing more.</p>
+
+    <h2>What we did</h2>
+    <p>On {DATA_DATE_LABEL} we opened each provider's own pages: cost or pricing pages where they exist, and the homepage. We copied the figures and statements that appear there, and the page address, into each listing. Where the FAA publishes a rate, we read the FAA document.</p>
+
+    <h2>What we did not do</h2>
+    <ul>
+      <li>We did not request quotes, call providers, use their booking tools or fly with them. <strong>We have not hands-on tested any provider.</strong></li>
+      <li>We did not check safety records, audits or ratings. Where a provider cites ARGUS, Wyvern or IS-BAO, we report that it says so.</li>
+      <li>We did not verify claims such as "largest" or "only". They are marked as the provider's own.</li>
+    </ul>
+
+    <h2>What the labels mean</h2>
+    <ul>
+      <li><strong>{BASIS.base.label}.</strong> {BASIS.base.note}</li>
+      <li><strong>{BASIS['all-in'].label}.</strong> {BASIS['all-in'].note}</li>
+      <li><strong>{BASIS.planning.label}.</strong> {BASIS.planning.note}</li>
+      <li><strong>{BASIS.from.label}.</strong> {BASIS.from.note}</li>
+      <li><strong>{BASIS.unstated.label}.</strong> {BASIS.unstated.note} We do not guess.</li>
+    </ul>
+    <p>"Not stated on the pages we read" means exactly that. A provider may say it elsewhere on its site or on a call.</p>
+
+    <h2>Who is included, and who is not</h2>
+    <p>Providers that sell on-demand charter of a whole aircraft, to consumers in the U.S. or globally, through a public website with enough text to read. Brokers, marketplaces and operators are all included, and the listing says which the provider says it is.</p>
+    <p>Not included yet: jet card and fractional programs (Private Jet Card Comparisons already covers those in depth), seat-based and scheduled flights, and providers whose pages returned too little text for us to read, which at the time included Wheels Up and Executive Jet Management. That is a limit of this first set of {listings.length}, not a judgment.</p>
+
+    <h2>How providers are ordered</h2>
+    <p>Alphabetically. We do not rank providers. Nobody pays to be listed or to move up, and the order never reflects a commission.</p>
+
+    <h2>Money</h2>
+    <p>Some links may become affiliate links, and we may earn a commission if you book through them. Whether a provider has an affiliate program does not decide whether it is listed, what we say about it or where it appears. See the <a href="/affiliate-disclosure/">affiliate disclosure</a>.</p>
+
+    <h2 id="corrections">Corrections</h2>
+    <p>Published prices change often and each listing shows the date we read it. If something is out of date or wrong, tell us and we will check it against the provider's page.{CONTACT_EMAIL && <> Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</>} Providers are welcome to send corrections to their own listing.</p>
+  </div>
+</BaseLayout>

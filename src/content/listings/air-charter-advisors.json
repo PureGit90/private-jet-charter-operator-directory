@@ -1,0 +1,27 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The safety and audit statements are its own."
+  ],
+  "feesNamed": [],
+  "rates": [],
+  "name": "Air Charter Advisors",
+  "url": "https://www.aircharteradvisors.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Says it is part of the Wyvern broker network and uses \"only FAR Part 135 or 121 (or foreign equivalent) air carriers\".",
+  "summary": "Broker that sells by phone and quote form and publishes no charter rates.",
+  "differentiator": "States that it reviews third-party audits and checks pilot medical exams and experience before booking. Its page tells you to call for the latest hourly rates, so there is no figure to compare.",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "Offers \"free, all-inclusive quotes\". The pages we read say to call or request a quote for hourly rates and show no dollar figure for charter.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who prefer a phone-led broker and will collect written quotes anyway.",
+  "skipIf": "You want a price before you share trip details.",
+  "sources": [
+    "https://www.aircharteradvisors.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

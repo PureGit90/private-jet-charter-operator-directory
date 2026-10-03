@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { DATA_DATE_LABEL, ROLES } from '../lib/site';
+import { alpha } from '../lib/rates';
+
+const listings = (await getCollection('listings')).sort(alpha);
+const by = (role: string) => listings.filter((l) => l.data.role === role);
+const brokers = by('broker'), markets = by('marketplace'), ops = by('operator');
+const explicit = listings.filter((l) => l.data.operatorNamed === 'says-yes');
+const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Private jet charter broker or operator: who flies the plane' };
+---
+<BaseLayout title="Private jet charter: broker or operator, who flies the plane" description="Most private jet charter brands describe themselves as brokers. What the difference is, what each provider says it is, and the questions that identify the operator before you pay." jsonLd={jsonLd}>
+  <div class="wrap prose">
+    <p class="crumbs"><a href="/">Home</a> / Broker or operator</p>
+    <h1>Broker or operator: who actually flies the plane</h1>
+    <p class="lead">On a charter, one company sells you the trip and another may fly it. Knowing which is which tells you who to ask about price, safety and cancellations.</p>
+
+    <h2>The difference</h2>
+    <ul>
+      <li><strong>Operator.</strong> The company that operates the aircraft and crew. In the U.S., on-demand charter is flown by carriers certificated under FAA Part 135 (or Part 121). The FAA publishes a spreadsheet of Part 135 operators and the aircraft authorized for charter.</li>
+      <li><strong>Broker, marketplace or arranger.</strong> A company that finds an aircraft from a network of operators and sells you the trip. It may not hold the certificate itself.</li>
+    </ul>
+    <p>Some companies are both, or sell aircraft they manage next to aircraft they source. The label on a website does not settle it. The questions below do.</p>
+
+    <h2>What the {listings.length} providers say they are</h2>
+    <p>From each provider's own pages, read on {DATA_DATE_LABEL}. We use the provider's wording, not ours.</p>
+    <div class="cards">
+      <div class="card"><h3>{brokers.length} brokers</h3><p>{ROLES.broker.note}</p></div>
+      <div class="card"><h3>{markets.length} marketplaces or platforms</h3><p>{ROLES.marketplace.note} JetFinder, Linear Air, Villiers and Airacer do not say plainly whether they operate aircraft, so their label is our reading.</p></div>
+      <div class="card"><h3>{ops.length} operators</h3><p>{ROLES.operator.note} This sample is built from consumer-facing providers with online price pages, so it leans to brokers by design. It is not a count of the market.</p></div>
+    </div>
+
+    <h2>Does the provider say who the operator is?</h2>
+    <p>Only {explicit.length} of {listings.length} providers say on the pages we read that you are told the operator before you book: {explicit.map((l) => l.data.name).join(' and ')}. For the rest, the pages we read are silent. That does not mean they hide it. It means you have to ask.</p>
+
+    <h2>Five questions to ask before you pay</h2>
+    <ol>
+      <li><strong>Who is the operating carrier?</strong> Ask for the legal company name and check it, and the tail number, against the FAA's Part 135 list.</li>
+      <li><strong>Which aircraft?</strong> Ask for the tail number and age, not only the category.</li>
+      <li><strong>Who do I pay?</strong> The provider you booked with, or the operator directly. Ask for the payment terms in writing.</li>
+      <li><strong>What is the total, itemized?</strong> Aircraft, taxes, fees and the brokerage or management charge as separate lines. See <a href="/fees/">fees</a>.</li>
+      <li><strong>What happens if the aircraft changes?</strong> Ask who approves a substitute and how a replacement is priced, and which cancellation terms apply, the provider's or the operator's.</li>
+    </ol>
+    <p class="small">The FAA's page says its Part 135 list is searchable by operator name or N-number, updated weekly, and that if an operator or aircraft is missing you should contact your local Flight Standards District Office. It also points to the AVInfo Air Operator Search. We read the page on {DATA_DATE_LABEL}, when it showed a last update of September 2, 2026. <a href="https://www.faa.gov/about/officeorg/headquartersoffices/avs/faa-certificated-aircraft-operators-legal-part-135-holders">FAA Part 135 operators and aircraft list</a>.</p>
+
+    <h2>A note on ratings logos</h2>
+    <p>Providers often show ARGUS, Wyvern or IS-BAO logos. They describe different audit and trip-review programs, and one provider on this site says on its own quote page that "a logo does not guarantee a particular flight". Ask for the report on your specific aircraft, crew and operator.</p>
+  </div>
+</BaseLayout>

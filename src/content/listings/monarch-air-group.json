@@ -1,0 +1,58 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The heavy jet range spans $5,400 to $11,000, so the label hides a wide spread."
+  ],
+  "feesNamed": [
+    "Repositioning fees",
+    "Crew overnight expenses",
+    "Airport handling charges",
+    "Applicable taxes"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprop",
+      "low": 1200,
+      "high": 2275
+    },
+    {
+      "category": "light",
+      "label": "Light jet",
+      "low": 2100,
+      "high": 3300
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jet",
+      "low": 3200,
+      "high": 4400
+    },
+    {
+      "category": "heavy",
+      "label": "Heavy jet",
+      "low": 5400,
+      "high": 11000
+    }
+  ],
+  "name": "Monarch Air Group",
+  "url": "https://monarchairgroup.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its homepage says: \"Monarch Air Group is an experienced air charter broker\" and \"an ARGUS Certified Broker\", and that every flight is operated by vetted FAA Part 135 carriers.",
+  "summary": "Fort Lauderdale charter broker with a five-row hourly table and a quick-quote tool.",
+  "differentiator": "Says it quotes a specific aircraft rather than a broad category, and that it sells no memberships. Its page also says both that fuel, crew and airport charges are in the hourly rate and that handling charges and crew overnight costs may be added, so ask which applies.",
+  "publishes": "category-ranges",
+  "rateBasis": "unstated",
+  "priceNote": "The quick-quote tool is marked \"Estimated price before taxes & fees\". The hourly table also lists helicopters at $1,600 to $1,750, which this site does not compare.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Says every flight it arranges is operated by vetted FAA Part 135 carriers. The pages we read do not say when the carrier is named.",
+  "bestFor": "Buyers who want a broker that says it quotes a named aircraft rather than a category.",
+  "skipIf": "You want a clean statement of what the hourly rate covers. The page says two different things.",
+  "sources": [
+    "https://monarchairgroup.com/private-jet-charter-flights-cost-calculator/",
+    "https://monarchairgroup.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

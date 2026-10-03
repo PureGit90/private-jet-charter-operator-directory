@@ -1,0 +1,29 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "Fleet size and safety statements are the company's own."
+  ],
+  "feesNamed": [],
+  "rates": [],
+  "name": "Solairus Aviation",
+  "url": "https://www.solairus.aero/",
+  "category": "Operators with their own fleet",
+  "role": "operator",
+  "roleBasis": "Its homepage says its core business is aircraft management and operation, with \"a fleet currently numbering over three hundred and fifty five aircraft\", founded in 2009. Its charter page says its sales team also sources aircraft from other charter providers in special situations.",
+  "summary": "Large aircraft management company that sells charter by quote and sometimes sources from other operators.",
+  "differentiator": "Says its charter options include prices, aircraft age, amenities and photos on request, and lets the client choose by need or price. Clay Lacy Aviation's website carries a headline that Solairus will acquire Clay Lacy's aircraft management and charter divisions; we did not read that announcement itself.",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "No dollar figure on the pages we read. Charter is by quote.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Says it operates its own managed fleet and, in special situations, sources aircraft from other audited operators.",
+  "bestFor": "Buyers who want a large operator that can also source outside its fleet.",
+  "skipIf": "You want a published price before contacting anyone.",
+  "sources": [
+    "https://www.solairus.aero/",
+    "https://www.solairus.aero/private-aircraft-charter/",
+    "https://www.claylacy.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

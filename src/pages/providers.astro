@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ROLES, PUBLISHES, BASIS, categoryByName } from '../lib/site';
+import { alpha } from '../lib/rates';
+
+const listings = (await getCollection('listings')).sort(alpha);
+---
+<BaseLayout title="All private jet charter providers" description={`${listings.length} private jet charter providers: whether each says it is a broker or an operator, what price it publishes, and what it names as extra.`}>
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / All providers</p>
+    <h1>All {listings.length} providers</h1>
+    <p class="lead">Listed alphabetically. Nobody pays to be listed or placed higher, and the order never reflects a commission.</p>
+    <form class="filters" aria-label="Filter the provider table" onsubmit="return false">
+      <div>
+        <label for="f-role">Says it is a</label>
+        <select id="f-role"><option value="">Anything</option>{Object.entries(ROLES).map(([k, v]) => <option value={k}>{v.label}</option>)}</select>
+      </div>
+      <div>
+        <label for="f-pub">Publishes</label>
+        <select id="f-pub"><option value="">Anything</option>{Object.entries(PUBLISHES).map(([k, v]) => <option value={k}>{v.label}</option>)}</select>
+      </div>
+      <p class="small" id="f-count" aria-live="polite"></p>
+    </form>
+    <div class="table-wrap">
+      <table id="compare" class="stack">
+        <caption>Providers, what they say they are, and what they publish about price</caption>
+        <thead><tr><th scope="col">Provider</th><th scope="col">Says it is a</th><th scope="col">Publishes</th><th scope="col">Hourly basis</th><th scope="col">Operator named before booking?</th></tr></thead>
+        <tbody>
+          {listings.map((l) => (
+            <tr data-role={l.data.role} data-pub={l.data.publishes}>
+              <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a><br /><span class="small">{categoryByName(l.data.category)?.short}</span></th>
+              <td data-label="Says it is a"><span class={`badge ${l.data.role}`}>{ROLES[l.data.role].label}</span></td>
+              <td data-label="Publishes">{PUBLISHES[l.data.publishes].label}</td>
+              <td data-label="Hourly basis"><span class={`badge ${l.data.rateBasis}`}>{BASIS[l.data.rateBasis].label}</span></td>
+              <td data-label="Operator named before booking?">{l.data.operatorNamed === 'says-yes' ? 'Says yes' : 'Not stated on pages we read'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <script is:inline>
+      (function () {
+        var role = document.getElementById('f-role'), pub = document.getElementById('f-pub'), count = document.getElementById('f-count');
+        var rows = Array.prototype.slice.call(document.querySelectorAll('#compare tbody tr'));
+        function apply() {
+          var n = 0;
+          rows.forEach(function (r) {
+            var show = (!role.value || r.dataset.role === role.value) && (!pub.value || r.dataset.pub === pub.value);
+            r.hidden = !show; if (show) n++;
+          });
+          count.textContent = 'Showing ' + n + ' of ' + rows.length + ' providers';
+        }
+        role.addEventListener('change', apply); pub.addEventListener('change', apply); apply();
+      })();
+    </script>
+  </div>
+</BaseLayout>

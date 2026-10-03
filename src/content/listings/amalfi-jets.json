@@ -1,0 +1,75 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The article gives market ranges, not Amalfi's own price list."
+  ],
+  "feesNamed": [
+    "7.5% federal excise tax (links IRS Publication 510)",
+    "Landing, ramp and FBO handling charges",
+    "Fuel surcharges",
+    "Sustainable aviation fuel premium (cites the EU 2% blending mandate)",
+    "Positioning and minimum charges as billable time"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprops and very light jets",
+      "low": 1500,
+      "high": 3000,
+      "note": "One range for both.",
+      "shared": true
+    },
+    {
+      "category": "very-light",
+      "label": "Turboprops and very light jets",
+      "low": 1500,
+      "high": 3000,
+      "note": "One range for both.",
+      "shared": true
+    },
+    {
+      "category": "light",
+      "label": "Light jets",
+      "low": 2500,
+      "high": 4000
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jets",
+      "low": 4000,
+      "high": 8000
+    },
+    {
+      "category": "super-midsize",
+      "label": "Super midsize jets",
+      "low": 5000,
+      "high": 10500
+    },
+    {
+      "category": "heavy",
+      "label": "Heavy and ultra long range jets",
+      "low": 8500,
+      "high": null,
+      "note": "Says rates \"often start at $8,500 and can exceed $20,000\"."
+    }
+  ],
+  "name": "Amalfi Jets",
+  "url": "https://amalfijets.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its cost article says: \"Amalfi Jets operates as a dedicated charter broker\", sourcing aircraft through a global network of vetted operators rather than a fixed fleet.",
+  "summary": "Charter broker with a 2026 cost guide that treats price as a total trip budget and lists the pieces.",
+  "differentiator": "Says billable time includes positioning and any minimum charges, so an hourly rate multiplied by your flight time understates the invoice. Its midsize range of $4,000 to $8,000 shows how much one category label can hide.",
+  "publishes": "category-ranges",
+  "rateBasis": "base",
+  "priceNote": "Says it provides itemized quotes showing aircraft type, estimated billable time and every key fee driving the total.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who want a plain explanation of billable time before reading any quote.",
+  "skipIf": "You want a published hourly rate card for its own aircraft. It is an article of market ranges.",
+  "sources": [
+    "https://amalfijets.com/news/private-jet-charter-cost-2026"
+  ],
+  "operatorNamed": "not-stated"
+}

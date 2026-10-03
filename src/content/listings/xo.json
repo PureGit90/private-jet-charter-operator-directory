@@ -1,0 +1,27 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "\"Largest\" is its own claim."
+  ],
+  "feesNamed": [],
+  "rates": [],
+  "name": "XO",
+  "url": "https://flyxo.com/",
+  "category": "Brokers and marketplaces",
+  "role": "marketplace",
+  "roleBasis": "Its homepage says: \"XO is the world's largest private jet marketplace.\" That is the company's own claim.",
+  "summary": "Marketplace and membership seller with priced deals on its homepage.",
+  "differentiator": "Charter prices come from a search rather than a rate card. The homepage lists priced \"deal\" entries (for example $3,000 and $4,000) without saying on the page what each covers, and promotes memberships alongside.",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "No hourly rate on the pages we read. A separate XO cost page loaded with almost no text and was not used.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who want to search and book from a phone and are open to memberships.",
+  "skipIf": "You want a published hourly rate or a list of what the deals include.",
+  "sources": [
+    "https://flyxo.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

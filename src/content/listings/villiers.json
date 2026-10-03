@@ -1,0 +1,27 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The accuracy claim (within 10%) is the company's own."
+  ],
+  "feesNamed": [],
+  "rates": [],
+  "name": "Villiers",
+  "url": "https://www.villiers.ai/",
+  "category": "Brokers and marketplaces",
+  "role": "marketplace",
+  "roleBasis": "Offers \"Tailored quotes from 10,000+ certified aircraft\" and has separate sign-ins for affiliates and operators. The homepage we read does not say \"broker\" or \"operator\", so the platform label is our reading of how the site is set up.",
+  "summary": "Online charter platform that says its prices come from a model trained on recent flights.",
+  "differentiator": "Says a machine learning model analyses 7,657 recent flights to predict pricing within 10% variance, and advertises \"transparent operator ratings\". Both are claims we could not check, and no hourly rate is published.",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "The homepage shows estimated price ranges in route examples and a request form. We did not find an hourly rate table.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Advertises \"transparent operator ratings\". The pages we read do not say whether the operator is named in the quote.",
+  "bestFor": "Buyers curious about a model-based estimate who will still confirm with a written quote.",
+  "skipIf": "You want a published rate card.",
+  "sources": [
+    "https://www.villiers.ai/"
+  ],
+  "operatorNamed": "not-stated"
+}

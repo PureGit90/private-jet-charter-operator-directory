@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, SITE_DESCRIPTION, CATEGORIES, DATA_DATE_LABEL, fmtUsd } from '../lib/site';
+import { alpha, categoryStats } from '../lib/rates';
+
+const listings = (await getCollection('listings')).sort(alpha);
+const light = categoryStats(listings, 'light');
+const midsize = categoryStats(listings, 'midsize');
+const withRates = listings.filter((l) => l.data.rates.length > 0).length;
+const quoteOnly = listings.filter((l) => l.data.publishes === 'none').length;
+const operators = listings.filter((l) => l.data.role === 'operator').length;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Private jet charter providers read for ${SITE_NAME}`,
+    itemListElement: listings.map((l, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: l.data.name,
+      url: new URL(`/listings/${l.id}/`, Astro.site ?? 'https://example.com').toString(),
+    })),
+  },
+];
+---
+<BaseLayout title={SITE_NAME} description={SITE_DESCRIPTION} jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Published light jet rates run from {fmtUsd(light.min!)} to {fmtUsd(light.max!)} an hour.</h1>
+      <p>That is {light.providers} providers describing the same kind of aircraft, each on its own page. Some of that gap is what the number includes, and some of it the pages do not explain. This site lines up what {listings.length} charter providers publish about price, which fees they name, and whether they say they fly the plane themselves.</p>
+      <a class="btn" href="/rates/">See the rates side by side</a>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stat" role="list">
+      <div role="listitem"><strong>{listings.length}</strong><span>providers read</span></div>
+      <div role="listitem"><strong>{withRates}</strong><span>publish an hourly figure we could tabulate</span></div>
+      <div role="listitem"><strong>{quoteOnly}</strong><span>show no charter price on the pages we read</span></div>
+      <div role="listitem"><strong>{operators}</strong><span>describe flying their own fleet</span></div>
+    </div>
+
+    <h2>What is different here</h2>
+    <div class="cards">
+      <div class="card"><a class="stretch" href="/rates/">
+        <h3>Rates, with the basis labeled</h3>
+        <p>Every hourly figure links to the provider's own page and says whether it is a base rate, an all-in median or a planning range. Light jets: {fmtUsd(light.min!)} to {fmtUsd(light.max!)}. Midsize: {fmtUsd(midsize.min!)} to {fmtUsd(midsize.max!)}.</p>
+        <span class="count">Published rates →</span>
+      </a></div>
+      <div class="card"><a class="stretch" href="/fees/">
+        <h3>The charges on top of the hourly rate</h3>
+        <p>Which providers name the 7.5% excise tax, the per-passenger segment fee, daily minimums and positioning, checked against the FAA's 2026 rates.</p>
+        <span class="count">Fees →</span>
+      </a></div>
+      <div class="card"><a class="stretch" href="/broker-vs-operator/">
+        <h3>Who actually flies the plane</h3>
+        <p>Most consumer charter brands describe themselves as brokers. Here is what each one says it is, and the questions that tell you who the operator is before you pay.</p>
+        <span class="count">Broker or operator →</span>
+      </a></div>
+    </div>
+
+    <h2>Browse the providers</h2>
+    <div class="cards">
+      {CATEGORIES.map((c) => (
+        <div class="card"><a class="stretch" href={`/category/${c.slug}/`}>
+          <h3>{c.name}</h3>
+          <p>{c.intro}</p>
+          <span class="count">{listings.filter((l) => l.data.category === c.name).length} providers →</span>
+        </a></div>
+      ))}
+    </div>
+
+    <div class="panel">
+      <h2>What this site is not</h2>
+      <p>It is not a quote tool, and it does not rank providers. Published rates are marketing figures read from each provider's pages on {DATA_DATE_LABEL}. We did not request quotes, call providers or fly with them. Your trip will price differently. Read <a href="/how-we-compare/">how we compare</a> for the method and its limits.</p>
+    </div>
+  </div>
+</BaseLayout>

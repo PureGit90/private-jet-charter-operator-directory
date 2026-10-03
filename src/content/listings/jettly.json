@@ -1,0 +1,66 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The pages we read do not say what the hourly ranges include."
+  ],
+  "feesNamed": [
+    "Airport fees (landing, handling, FBO)"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprop",
+      "low": 1500,
+      "high": 3000,
+      "note": "Illustrative, not a quote."
+    },
+    {
+      "category": "light",
+      "label": "Light jet",
+      "low": 3500,
+      "high": 6000,
+      "note": "Illustrative, not a quote."
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jet",
+      "low": 5000,
+      "high": 8000,
+      "note": "Illustrative, not a quote."
+    },
+    {
+      "category": "super-midsize",
+      "label": "Super midsize jet",
+      "low": 6500,
+      "high": 10000,
+      "note": "Illustrative, not a quote."
+    },
+    {
+      "category": "heavy",
+      "label": "Heavy jet",
+      "low": 8000,
+      "high": 15000,
+      "note": "Illustrative, not a quote."
+    }
+  ],
+  "name": "Jettly",
+  "url": "https://jettly.com/",
+  "category": "Brokers and marketplaces",
+  "role": "marketplace",
+  "roleBasis": "Its own articles call it \"a digital charter broker\" and an \"instant-pricing digital marketplace\". Its homepage says \"Get Instant Pricing On 23,000+ Aircraft\".",
+  "summary": "Online charter marketplace with an estimator page that lists hourly ranges and calls them illustrative.",
+  "differentiator": "Says in plain words that its hourly figures are \"illustrative guidance, not firm quotes\". Its ranges for light and midsize jets run above the base-rate group, so they are not interchangeable with the lower tables.",
+  "publishes": "category-ranges",
+  "rateBasis": "unstated",
+  "priceNote": "The estimator page gives five hourly ranges and says final quotes vary with the exact aircraft sourced, seasonal demand, positioning and special requirements.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who want a fast online starting point and understand it is a guide, not a quote.",
+  "skipIf": "You need to know whether the hourly figure includes taxes and fees. The page does not say.",
+  "sources": [
+    "https://jettly.com/charter-cost-estimator",
+    "https://jettly.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

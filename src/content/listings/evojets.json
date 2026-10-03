@@ -1,0 +1,74 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The hourly ranges are among the lowest of the base-rate tables we read, so expect a quote above them.",
+    "Its page says \"instant pricing for any route in the world\"; we did not test the tool."
+  ],
+  "feesNamed": [
+    "Fuel surcharge",
+    "Crew fees (per diem, hotel, meals)",
+    "Landing, handling and incidental fees",
+    "7.5% federal excise tax",
+    "Daily minimum flight time, typically 2 hours",
+    "Repositioning counted as billable time"
+  ],
+  "rates": [
+    {
+      "category": "turboprop",
+      "label": "Turboprop (Pilatus PC12)",
+      "low": 1200,
+      "high": 1800
+    },
+    {
+      "category": "very-light",
+      "label": "Very light jet (Phenom 100)",
+      "low": 1500,
+      "high": 2250
+    },
+    {
+      "category": "light",
+      "label": "Light jet (Hawker 400XP)",
+      "low": 2200,
+      "high": 3000
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jet (Lear 60)",
+      "low": 2800,
+      "high": 3800
+    },
+    {
+      "category": "super-midsize",
+      "label": "Supermidsize jet (Citation Sovereign)",
+      "low": 3800,
+      "high": 5000
+    },
+    {
+      "category": "heavy",
+      "label": "Heavy jet (Gulfstream G-IV)",
+      "low": 5000,
+      "high": 8000
+    }
+  ],
+  "name": "evoJets",
+  "url": "https://www.evojets.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its pages talk about \"your jet broker\" and explain \"What Is A Private Jet Broker?\" as a description of its own service. We did not find a plain \"we do not own aircraft\" line on the pages we read.",
+  "summary": "Charter provider that prints a full itemized sample trip and a six-row hourly table.",
+  "differentiator": "Shows its arithmetic. A Los Angeles to Aspen round trip in a midsize jet at $3,400 an hour for 5 hours becomes $20,317.50 once a $550 fuel surcharge, $600 crew fees, $750 landing fees and $1,417.50 in excise tax are added.",
+  "publishes": "category-ranges",
+  "rateBasis": "base",
+  "priceNote": "Hourly table labeled \"ballpark\" and one itemized trip. It also explains that most aircraft carry a 2-hour daily minimum, so a 1-hour flight can bill as 2 hours.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers who want to learn how an hourly rate turns into a total before they compare quotes.",
+  "skipIf": "You need the per-passenger segment fee shown. Its sample trip lists the excise tax but no segment fee line.",
+  "sources": [
+    "https://www.evojets.com/charter-flight-costs-pricing-basics/",
+    "https://www.evojets.com/what-is-a-private-jet-broker/",
+    "https://www.evojets.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

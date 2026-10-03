@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ROLES, PUBLISHES, BASIS, categoryByName, fmtRange } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const listings = await getCollection('listings');
+  return listings.map((listing) => ({ params: { id: listing.id }, props: { listing } }));
+}
+
+const { listing } = Astro.props;
+const d = listing.data;
+const cat = categoryByName(d.category);
+const href = d.affiliateUrl ?? d.url;
+const rel = d.affiliateUrl ? 'sponsored noopener' : 'noopener';
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: d.name,
+    url: d.url,
+    description: d.summary,
+  },
+];
+---
+<BaseLayout title={`${d.name}: published prices and who flies`} description={d.summary} jsonLd={jsonLd}>
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / <a href="/providers/">All providers</a> / {d.name}</p>
+    <h1>{d.name}</h1>
+    <div class="meta">
+      <span class={`badge ${d.role}`}>{ROLES[d.role].label}</span>
+      <span class="badge">{PUBLISHES[d.publishes].label}</span>
+      <span class={`badge ${d.rateBasis}`}>{BASIS[d.rateBasis].label}</span>
+      <span class="badge">Read {d.lastChecked}</span>
+    </div>
+    <p class="lead">{d.summary}</p>
+
+    <div class="panel">
+      <h2>What sets it apart</h2>
+      <p>{d.differentiator}</p>
+    </div>
+
+    <h2>What it says it is</h2>
+    <p>{d.roleBasis}</p>
+
+    <h2>Price it publishes</h2>
+    <p>{d.priceNote}</p>
+    {d.rates.length > 0 && (
+      <div class="table-wrap">
+        <table class="stack">
+          <caption>Hourly figures as published ({BASIS[d.rateBasis].label.toLowerCase()})</caption>
+          <thead><tr><th scope="col">Provider's label</th><th scope="col">Published</th><th scope="col">Note</th></tr></thead>
+          <tbody>
+            {d.rates.map((r) => (
+              <tr>
+                <th scope="row">{r.label}</th>
+                <td data-label="Published" class="num">{fmtRange(r.low, r.high)}</td>
+                <td data-label="Note">{r.note ?? ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+    <p class="small">{BASIS[d.rateBasis].note} Not a quote.</p>
+
+    {d.feesNamed.length > 0 && (
+      <>
+        <h2>Charges it names</h2>
+        <ul>{d.feesNamed.map((f) => <li>{f}</li>)}</ul>
+      </>
+    )}
+
+    <h2>Operator and instant price</h2>
+    <p><strong>Operator named?</strong> {d.operatorDisclosure}</p>
+    <p><strong>Instant online estimate?</strong> {d.instantEstimate === 'states-it-offers' ? 'The provider says it offers one. We did not test it.' : 'Not stated on the pages we read.'}</p>
+
+    <div class="two">
+      <div class="card"><strong>Best for</strong><p>{d.bestFor}</p></div>
+      <div class="card"><strong>Skip it if</strong><p>{d.skipIf}</p></div>
+    </div>
+
+    {d.watchOut.length > 0 && (
+      <>
+        <h2>Watch out for</h2>
+        <ul>{d.watchOut.map((w) => <li>{w}</li>)}</ul>
+      </>
+    )}
+
+    <p><a class="btn dark" href={href} rel={rel} target="_blank">Visit {d.name}</a></p>
+
+    <h2>Pages we read</h2>
+    <ul class="sources">{d.sources.map((s) => <li><a href={s} rel="noopener" target="_blank">{s}</a></li>)}</ul>
+    <p class="small">Read on {d.lastChecked}. Prices change. If this is out of date, <a href="/how-we-compare/#corrections">tell us</a>. Category: {cat?.name}.</p>
+  </div>
+</BaseLayout>

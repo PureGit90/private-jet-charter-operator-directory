@@ -1,0 +1,70 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The ranges exclude positioning, trip charges and taxes, so a real quote can be higher."
+  ],
+  "feesNamed": [
+    "Positioning",
+    "Trip charges",
+    "Taxes",
+    "Charter arranger and carrier charges",
+    "Third-party charges"
+  ],
+  "rates": [
+    {
+      "category": "light",
+      "label": "Light jet",
+      "low": 6800,
+      "high": 9900,
+      "note": "Whole-aircraft planning range before positioning, trip charges and taxes."
+    },
+    {
+      "category": "midsize",
+      "label": "Midsize jet",
+      "low": 7750,
+      "high": 10800,
+      "note": "Same basis."
+    },
+    {
+      "category": "super-midsize",
+      "label": "Super midsize jet",
+      "low": 9500,
+      "high": 13000,
+      "note": "Same basis."
+    },
+    {
+      "category": "heavy",
+      "label": "Heavy / long range jet",
+      "low": 11500,
+      "high": 16700,
+      "note": "Same basis."
+    },
+    {
+      "category": "ultra-long-range",
+      "label": "Ultra long range jet",
+      "low": 15200,
+      "high": 18500,
+      "note": "Same basis."
+    }
+  ],
+  "name": "Jet Partners",
+  "url": "https://jetpartners.aero/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Says it has been \"arranging private jet charter since 2010\" and tells buyers to review the \"identified carrier, aircraft, complete price, and trip terms in a written proposal before booking\".",
+  "summary": "Charter arranger with a pricing page of planning ranges and a quote page that tells buyers what to compare.",
+  "differentiator": "Its quote page lists what to compare between proposals: total price, taxes, charter-arranger and carrier charges, third-party charges, and what happens if the aircraft is substituted. It links the FAA Part 135 list, and its planning ranges sit with the high group, not the low group.",
+  "publishes": "planning-ranges",
+  "rateBasis": "planning",
+  "priceNote": "Its calculator shows, for example, $19,500 to $36,500 one way for a light jet from Teterboro to Miami Opa-locka with six passengers, marked \"Planning estimate, not a live quote\". It says a written proposal controls the final price.",
+  "instantEstimate": "states-it-offers",
+  "operatorDisclosure": "Says its written proposal identifies the carrier and aircraft before booking. It shows ARGUS, Wyvern and IS-BAO logos with the note \"A logo does not guarantee a particular flight\".",
+  "bestFor": "Buyers who want a checklist of what to compare between proposals, and a planning range that is not a base rate.",
+  "skipIf": "You are comparing against base-rate tables and expect similar numbers. Its ranges are a different basis.",
+  "sources": [
+    "https://jetpartners.aero/pricing",
+    "https://jetpartners.aero/get-a-quote/"
+  ],
+  "operatorNamed": "says-yes"
+}

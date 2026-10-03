@@ -1,0 +1,27 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The Wyvern status is its own statement with a link we did not follow."
+  ],
+  "feesNamed": [],
+  "rates": [],
+  "name": "PrivateJet.com",
+  "url": "https://privatejet.com/",
+  "category": "Brokers and marketplaces",
+  "role": "broker",
+  "roleBasis": "Its homepage refers to \"our private jet charter broker Wilbur AI\" and links a Wyvern verification, describing itself as a \"WYVERN Registered Broker\".",
+  "summary": "Broker site with quote forms by trip type and an AI assistant, and no published price.",
+  "differentiator": "Separates quote requests by trip type: business, group, sports team, hospitality, leisure and air ambulance. No hourly rate or sample price is published on the homepage.",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "The homepage shows quote request links and no dollar figure for charter.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers whose trip fits one of its trip-type forms, such as a group or sports team charter.",
+  "skipIf": "You want any published price before you ask.",
+  "sources": [
+    "https://privatejet.com/"
+  ],
+  "operatorNamed": "not-stated"
+}

@@ -1,0 +1,33 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "The ARGUS Platinum rating and safety record are its own statements."
+  ],
+  "feesNamed": [
+    "Airport handling",
+    "Overnight crew",
+    "Catering and ground transportation",
+    "Repositioning fee"
+  ],
+  "rates": [],
+  "name": "Ventura Air Services",
+  "url": "https://venturajet.com/",
+  "category": "Operators with their own fleet",
+  "role": "operator",
+  "roleBasis": "Its homepage says: \"Ventura stands out by managing its own fleet\" and that it was founded in 1955 as a boutique airline charter operation.",
+  "summary": "Fleet-managing operator with an ARGUS Platinum rating and a cost page that gives no figures.",
+  "differentiator": "Says it manages its own fleet and holds ARGUS Platinum. Its cost page lists what pushes a price up, handling, overnight crew, catering, ground transport and repositioning, but gives no number beyond saying rentals \"can begin at a few thousand dollars per hour\".",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "No dollar figures on the cost page, only the statement that charter can begin at a few thousand dollars per hour.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Says it manages its own fleet. The pages we read do not say whether it also sources aircraft from other operators.",
+  "bestFor": "Buyers who want to deal with a fleet operator directly and are happy to get a quote by request.",
+  "skipIf": "You want any published rate.",
+  "sources": [
+    "https://venturajet.com/",
+    "https://venturajet.com/private-jet-charter-cost/"
+  ],
+  "operatorNamed": "not-stated"
+}

@@ -1,0 +1,29 @@
+{
+  "directoryType": "service-provider",
+  "lastChecked": "2026-10-03",
+  "watchOut": [
+    "Advertised prices are net, so the amount you pay is higher."
+  ],
+  "feesNamed": [
+    "Taxes and regulatory fees (stated as additional to the advertised net price)"
+  ],
+  "rates": [],
+  "name": "Airacer",
+  "url": "https://airacer.com/",
+  "category": "Brokers and marketplaces",
+  "role": "marketplace",
+  "roleBasis": "The homepage does not say whether Airacer is a broker or an operator. It offers charter quotes, empty-leg offers with listed prices, jet cards and memberships, so we file it as a platform.",
+  "summary": "Charter platform with quote requests and priced empty-leg offers.",
+  "differentiator": "States plainly that \"all advertised charter private jet rates are net prices and are subject to taxes, regulatory fees\" and more, which many pages leave unsaid.",
+  "publishes": "none",
+  "rateBasis": "none",
+  "priceNote": "The homepage lists empty-leg offers with starting prices, for example $11,400 on a San Antonio to Dallas offer. We found no hourly rate table for standard charter.",
+  "instantEstimate": "not-stated",
+  "operatorDisclosure": "Not stated on the pages we read.",
+  "bestFor": "Buyers browsing empty-leg offers who want them tied to a platform with quote support.",
+  "skipIf": "You want a published rate card for standard charter.",
+  "sources": [
+    "https://airacer.com/"
+  ],
+  "operatorNamed": "not-stated"
+}
