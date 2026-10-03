@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
 import { SITE_NAME, NOINDEX } from '../lib/site';
+import barlow600 from '@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-600-normal.woff2?url';
+import barlow700 from '@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-700-normal.woff2?url';
+import serif from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
 
 export interface Props {
   title: string;
@@ -10,7 +13,7 @@ export interface Props {
 }
 
 const { title, description, jsonLd, path = Astro.url.pathname } = Astro.props;
-const fullTitle = title === SITE_NAME ? `${SITE_NAME}: published hourly rates, fees and who flies the plane` : `${title} | ${SITE_NAME}`;
+const fullTitle = title;
 const base = Astro.site ?? 'https://example.com';
 const ogImage = new URL('/og-image.png', base).toString();
 const pageUrl = new URL(path, base).toString();
@@ -24,10 +27,13 @@ const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {NOINDEX && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="preload" href={barlow700} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={barlow600} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={serif} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={pageUrl} />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#0f2a43" />
+    <meta name="theme-color" content="#0e2236" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={fullTitle} />
@@ -62,6 +68,8 @@ const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       <div class="wrap">
         <div class="links">
           <a href="/how-we-compare/">How we compare</a>
+          <a href="/about/">About</a>
+          <a href="/corrections/">Corrections</a>
           <a href="/affiliate-disclosure/">Affiliate disclosure</a>
           <a href="/privacy-policy/">Privacy policy</a>
         </div>

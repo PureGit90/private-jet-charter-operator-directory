@@ -23,17 +23,19 @@ const jsonLd = [
   },
 ];
 ---
-<BaseLayout title={`${d.name}: published prices and who flies`} description={d.summary} jsonLd={jsonLd}>
+<BaseLayout title={`${d.name} Charter Prices: Published Rates and Fees`} description={`${d.summary} Read ${d.lastChecked}.`} jsonLd={jsonLd}>
   <div class="wrap prose wide">
     <p class="crumbs"><a href="/">Home</a> / <a href="/providers/">All providers</a> / {d.name}</p>
     <h1>{d.name}</h1>
     <div class="meta">
-      <span class={`badge ${d.role}`}>{ROLES[d.role].label}</span>
-      <span class="badge">{PUBLISHES[d.publishes].label}</span>
-      <span class={`badge ${d.rateBasis}`}>{BASIS[d.rateBasis].label}</span>
-      <span class="badge">Read {d.lastChecked}</span>
+      <span class={`tag ${d.role}`}>{ROLES[d.role].label}</span>
+      <span class="tag">{PUBLISHES[d.publishes].label}</span>
+      <span class={`tag ${d.rateBasis}`}>{BASIS[d.rateBasis].label}</span>
+      <span class="tag">Read {d.lastChecked}</span>
     </div>
     <p class="lead">{d.summary}</p>
+    <p><a class="btn" href={href} rel={rel} target="_blank">Request a quote from {d.name}</a></p>
+    <p class="small">Opens {d.name}'s own site. Ask for an itemized total in writing.</p>
 
     <div class="panel">
       <h2>What sets it apart</h2>
@@ -76,8 +78,8 @@ const jsonLd = [
     <p><strong>Instant online estimate?</strong> {d.instantEstimate === 'states-it-offers' ? 'The provider says it offers one. We did not test it.' : 'Not stated on the pages we read.'}</p>
 
     <div class="two">
-      <div class="card"><strong>Best for</strong><p>{d.bestFor}</p></div>
-      <div class="card"><strong>Skip it if</strong><p>{d.skipIf}</p></div>
+      <div><strong>Best for</strong><p>{d.bestFor}</p></div>
+      <div><strong>Skip it if</strong><p>{d.skipIf}</p></div>
     </div>
 
     {d.watchOut.length > 0 && (
@@ -87,7 +89,13 @@ const jsonLd = [
       </>
     )}
 
-    <p><a class="btn dark" href={href} rel={rel} target="_blank">Visit {d.name}</a></p>
+    <h2>Before you request a quote</h2>
+    <ul>
+      <li>Ask whether the hourly figure is a base rate or all-in, and how many billable hours the trip uses.</li>
+      <li>Ask for the operator's legal name and the aircraft's tail number, then check it against the <a href="/broker-vs-operator/">FAA list</a>.</li>
+      <li>Ask for taxes, fees and any brokerage charge as separate lines. See <a href="/fees/">what is usually added</a>.</li>
+    </ul>
+    <p><a class="btn" href={href} rel={rel} target="_blank">Request a quote from {d.name}</a></p>
 
     <h2>Pages we read</h2>
     <ul class="sources">{d.sources.map((s) => <li><a href={s} rel="noopener" target="_blank">{s}</a></li>)}</ul>

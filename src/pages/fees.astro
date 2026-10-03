@@ -8,7 +8,7 @@ const listings = (await getCollection('listings')).sort(alpha);
 const counts = FEE_TESTS.map((f) => ({ ...f, n: listings.filter((l) => names(l, f.test)).length }));
 const noneNamed = listings.filter((l) => l.data.feesNamed.length === 0).length;
 ---
-<BaseLayout title="What is charged on top of the hourly rate" description="The taxes and fees that sit on top of a private jet charter hourly rate, which providers name them, and the FAA's 2026 federal rates.">
+<BaseLayout title="Private Jet Charter Fees and Taxes on Top of the Hourly Rate" description="Excise tax, segment fee, daily minimums, positioning and more: which charter providers name each charge, checked against the FAA's 2026 rates.">
   <div class="wrap prose wide">
     <p class="crumbs"><a href="/">Home</a> / Fees</p>
     <h1>What is charged on top of the hourly rate</h1>
@@ -16,8 +16,8 @@ const noneNamed = listings.filter((l) => l.data.feesNamed.length === 0).length;
 
     <h2>The two federal charges, checked</h2>
     <div class="two">
-      <div class="card"><strong>7.5% excise tax</strong><p>The FAA's 2026 tax structure lists a 7.5 percent domestic passenger ticket tax. Several providers add it to charter invoices. One, Linear Air, says air taxis are generally not subject to it. Whether it applies depends on the aircraft and the trip.</p></div>
-      <div class="card"><strong>$5.30 segment fee</strong><p>The FAA lists a domestic flight segment tax of $5.30 per passenger per segment, effective January 1, 2026 and indexed to inflation. Paramount Business Jets and JetLevel state $5.30. Stratos Jets states $4.50 and Linear Air states $1.50 to $4.50.</p></div>
+      <div><strong>7.5% excise tax</strong><p>The FAA's 2026 tax structure lists a 7.5 percent domestic passenger ticket tax. Several providers add it to charter invoices. One, Linear Air, says air taxis are generally not subject to it. Whether it applies depends on the aircraft and the trip.</p></div>
+      <div><strong>$5.30 segment fee</strong><p>The FAA lists a domestic flight segment tax of $5.30 per passenger per segment, effective January 1, 2026 and indexed to inflation. Paramount Business Jets and JetLevel state $5.30. Stratos Jets states $4.50 and Linear Air states $1.50 to $4.50.</p></div>
     </div>
     <p class="small">Source: <a href="https://www.faa.gov/about/budget/aatf/Current-Aviation-Excise-Tax-Structure-and-Rates-2026.pdf">FAA, Current Aviation Excise Tax Structure and Rates 2026</a>, read {DATA_DATE_LABEL}. This site does not give tax advice. Ask your provider which taxes apply to your trip and to show them as separate lines.</p>
 

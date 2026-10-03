@@ -6,10 +6,17 @@ import { alpha, categoryStats } from '../lib/rates';
 
 const listings = (await getCollection('listings')).sort(alpha);
 const light = categoryStats(listings, 'light');
-const midsize = categoryStats(listings, 'midsize');
 const withRates = listings.filter((l) => l.data.rates.length > 0).length;
 const quoteOnly = listings.filter((l) => l.data.publishes === 'none').length;
 const operators = listings.filter((l) => l.data.role === 'operator').length;
+
+// Sample trip as published on evoJets' pricing page (listing: evojets), read 2026-10-03.
+const rate = 3400, hours = 5;
+const flight = rate * hours, fuel = 550, crew = 600, landing = 750;
+const subtotal = flight + fuel + crew + landing;
+const tax = subtotal * 0.075;
+const total = subtotal + tax;
+const usd = (n: number) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 const jsonLd = [
   {
@@ -25,56 +32,65 @@ const jsonLd = [
   },
 ];
 ---
-<BaseLayout title={SITE_NAME} description={SITE_DESCRIPTION} jsonLd={jsonLd}>
+<BaseLayout title={`${SITE_NAME}: What ${listings.length} Providers Publish`} description={`A ${fmtUsd(rate)} hourly rate became a ${usd(total)} invoice. Hourly rates, fees and broker or operator status for ${listings.length} private jet charter companies, each sourced to its own page.`} jsonLd={jsonLd}>
   <section class="hero">
     <div class="wrap">
-      <h1>Published light jet rates run from {fmtUsd(light.min!)} to {fmtUsd(light.max!)} an hour.</h1>
-      <p>That is {light.providers} providers describing the same kind of aircraft, each on its own page. Some of that gap is what the number includes, and some of it the pages do not explain. This site lines up what {listings.length} charter providers publish about price, which fees they name, and whether they say they fly the plane themselves.</p>
-      <a class="btn" href="/rates/">See the rates side by side</a>
+      <div>
+        <h1>A {fmtUsd(rate)} hourly rate became a {usd(total)} invoice.</h1>
+        <p>That is a sample trip one charter broker publishes on its own pricing page. This site reads what {listings.length} private jet charter providers publish about price, fees and who flies the plane, and lines it up with sources.</p>
+        <p class="also">Light jets are published at {fmtUsd(light.min!)} to {fmtUsd(light.max!)} an hour across {light.providers} providers, and the pages do not always say what that number includes.</p>
+        <p><a class="btn" href="/rates/">See the published rates</a></p>
+      </div>
+      <div class="invoice" aria-label="Sample charter invoice">
+        <h2>Los Angeles to Aspen, round trip</h2>
+        <p class="trip">Midsize jet, {hours} flight hours at {fmtUsd(rate)}, 2 days and 1 night</p>
+        <dl>
+          <div class="row"><dt>Flight time</dt><dd>{usd(flight)}</dd></div>
+          <div class="row"><dt>Fuel surcharge</dt><dd>{usd(fuel)}</dd></div>
+          <div class="row"><dt>Crew fees</dt><dd>{usd(crew)}</dd></div>
+          <div class="row"><dt>Landing fees</dt><dd>{usd(landing)}</dd></div>
+          <div class="row sub"><dt>Subtotal</dt><dd>{usd(subtotal)}</dd></div>
+          <div class="row"><dt>Federal excise tax, 7.5%</dt><dd>{usd(tax)}</dd></div>
+          <div class="row total"><dt>Total</dt><dd>{usd(total)}</dd></div>
+        </dl>
+        <p class="src">Sample trip as published by <a href="/listings/evojets/">evoJets</a>, read {DATA_DATE_LABEL}. Not a quote.</p>
+      </div>
     </div>
   </section>
 
   <div class="wrap">
-    <div class="stat" role="list">
-      <div role="listitem"><strong>{listings.length}</strong><span>providers read</span></div>
-      <div role="listitem"><strong>{withRates}</strong><span>publish an hourly figure we could tabulate</span></div>
-      <div role="listitem"><strong>{quoteOnly}</strong><span>show no charter price on the pages we read</span></div>
-      <div role="listitem"><strong>{operators}</strong><span>describe flying their own fleet</span></div>
-    </div>
+    <ul class="facts">
+      <li><strong>{listings.length}</strong><span>providers read</span></li>
+      <li><strong>{withRates}</strong><span>publish an hourly figure we could tabulate</span></li>
+      <li><strong>{quoteOnly}</strong><span>show no charter price on the pages we read</span></li>
+      <li><strong>{operators}</strong><span>describe flying their own fleet</span></li>
+    </ul>
 
-    <h2>What is different here</h2>
-    <div class="cards">
-      <div class="card"><a class="stretch" href="/rates/">
-        <h3>Rates, with the basis labeled</h3>
-        <p>Every hourly figure links to the provider's own page and says whether it is a base rate, an all-in median or a planning range. Light jets: {fmtUsd(light.min!)} to {fmtUsd(light.max!)}. Midsize: {fmtUsd(midsize.min!)} to {fmtUsd(midsize.max!)}.</p>
-        <span class="count">Published rates →</span>
-      </a></div>
-      <div class="card"><a class="stretch" href="/fees/">
-        <h3>The charges on top of the hourly rate</h3>
+    <h2>Where to start</h2>
+    <ul class="paths">
+      <li>
+        <h3><a href="/rates/">Published rates</a></h3>
+        <p>Hourly rates by aircraft type, each labeled as a base rate, an all-in figure or a planning range, with the page it came from.</p>
+      </li>
+      <li>
+        <h3><a href="/fees/">Fees on top</a></h3>
         <p>Which providers name the 7.5% excise tax, the per-passenger segment fee, daily minimums and positioning, checked against the FAA's 2026 rates.</p>
-        <span class="count">Fees →</span>
-      </a></div>
-      <div class="card"><a class="stretch" href="/broker-vs-operator/">
-        <h3>Who actually flies the plane</h3>
-        <p>Most consumer charter brands describe themselves as brokers. Here is what each one says it is, and the questions that tell you who the operator is before you pay.</p>
-        <span class="count">Broker or operator →</span>
-      </a></div>
-    </div>
-
-    <h2>Browse the providers</h2>
-    <div class="cards">
+      </li>
+      <li>
+        <h3><a href="/broker-vs-operator/">Broker or operator</a></h3>
+        <p>Most consumer charter brands call themselves brokers. What each one says it is, and five questions that name the operator before you pay.</p>
+      </li>
       {CATEGORIES.map((c) => (
-        <div class="card"><a class="stretch" href={`/category/${c.slug}/`}>
-          <h3>{c.name}</h3>
-          <p>{c.intro}</p>
-          <span class="count">{listings.filter((l) => l.data.category === c.name).length} providers →</span>
-        </a></div>
+        <li>
+          <h3><a href={`/category/${c.slug}/`}>{c.name}</a></h3>
+          <p>{listings.filter((l) => l.data.category === c.name).length} providers. {c.intro.split('. ')[0]}.</p>
+        </li>
       ))}
-    </div>
+    </ul>
 
     <div class="panel">
       <h2>What this site is not</h2>
-      <p>It is not a quote tool, and it does not rank providers. Published rates are marketing figures read from each provider's pages on {DATA_DATE_LABEL}. We did not request quotes, call providers or fly with them. Your trip will price differently. Read <a href="/how-we-compare/">how we compare</a> for the method and its limits.</p>
+      <p>It is not a quote tool, and it does not rank providers. Published rates are marketing figures read from each provider's pages on {DATA_DATE_LABEL}. We did not request quotes, call providers or fly with them. Your trip will price differently. Read <a href="/how-we-compare/">how we compare</a> for the method and its limits, and <a href="/about/">who runs this site</a>.</p>
     </div>
   </div>
 </BaseLayout>

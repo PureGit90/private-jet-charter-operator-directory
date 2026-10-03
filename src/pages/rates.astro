@@ -20,12 +20,33 @@ const cell = (l: any, cat: string) => {
 };
 const shown = RATE_CATEGORIES;
 
-const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Published private jet charter hourly rates, side by side', description: 'Hourly rates published by private jet charter providers, with the basis labeled.' };
+const med = categoryStats(listings, 'midsize');
+const heavy = categoryStats(listings, 'heavy');
+const lightS = categoryStats(listings, 'light');
+const range = (s: { min: number | null; max: number | null }) => `${fmtUsd(s.min!)} to ${fmtUsd(s.max!)}`;
+const faq = [
+  {
+    q: 'How much does a private jet charter cost per hour?',
+    a: `Providers publish very different figures. Across the providers we read, light jets are published at ${range(lightS)} an hour (${lightS.providers} providers), midsize jets at ${range(med)} (${med.providers}) and heavy jets at ${range(heavy)} (${heavy.providers}). These are marketing figures read from each provider's own pages on ${DATA_DATE_LABEL}. Some are base rates and some are all-in, and none is a quote.`,
+  },
+  {
+    q: 'Why do published hourly rates differ so much?',
+    a: 'Providers publish different things under the same label. A base rate covers the aircraft and crew, with fees and taxes added. An all-in figure divides a total trip price by flight time, so it includes positioning, daily minimums, fees and tax. JetLevel says its all-in figures run higher than advertised base rates for that reason. Several pages do not say which kind of figure they show.',
+  },
+  {
+    q: 'Is the hourly rate the price I will pay?',
+    a: 'No. Billable time can include positioning and a daily minimum, and fees and taxes come on top. One broker publishes a sample trip where a $3,400 hourly rate over 5 flight hours came to $20,317.50 after fuel, crew, landing fees and a 7.5% federal excise tax. The FAA lists a $5.30 per-passenger segment tax for 2026. Ask for an itemized written total.',
+  },
+];
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Private jet charter cost per hour: what providers publish', description: 'Hourly rates published by private jet charter providers, with the basis labeled.' },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
 ---
-<BaseLayout title="Published private jet charter rates, side by side" description={`Hourly rates ${withRates.length} charter providers publish by aircraft type, with each figure's basis labeled and sourced to the provider's own page.`} jsonLd={jsonLd}>
+<BaseLayout title="Private Jet Charter Cost Per Hour: Published Rates Compared" description={`Hourly rates ${withRates.length} charter providers publish by aircraft type, labeled base or all-in and linked to each page. Light jets run ${range(lightS)} an hour.`} jsonLd={jsonLd}>
   <div class="wrap prose wide">
     <p class="crumbs"><a href="/">Home</a> / Published rates</p>
-    <h1>Published hourly rates, side by side</h1>
+    <h1>Private jet charter cost per hour: what providers publish</h1>
     <p class="lead">What each provider's own pages say a flight hour costs, by aircraft type. Read on {DATA_DATE_LABEL}. These are marketing figures, not quotes.</p>
 
     <div class="panel">
@@ -40,17 +61,22 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pu
     </div>
 
     <h2>Light jets, as published</h2>
-    <p>Bars show each provider's published range on a scale of $0 to {fmtUsd(SCALE)} an hour. Blue is a base rate. Orange is an all-in or planning figure. Grey means the page does not say what is included, or gives only a starting price.</p>
+    <p>Each bar is the provider's published range on a scale of $0 to {fmtUsd(SCALE)} an hour. The color says what the page says the figure includes.</p>
+    <div class="legend">
+      <span class="tag base">Base rate</span>
+      <span class="tag all-in">All-in or planning range</span>
+      <span class="tag unstated">Basis not stated, or a starting price</span>
+    </div>
     <div class="table-wrap">
       <table class="stack">
         <caption>Light jet hourly rates, {new Set(lightRows.map((r) => r.id)).size} providers</caption>
-        <thead><tr><th scope="col">Provider</th><th scope="col">Published</th><th scope="col">Basis</th><th scope="col">Range on a $0 to {fmtUsd(SCALE)} scale</th></tr></thead>
+        <thead><tr><th scope="col">Provider</th><th scope="col">Published</th><th scope="col">Basis</th><th scope="col">Range<div class="axis" aria-hidden="true"><span>$0</span><span>$2k</span><span>$4k</span><span>$6k</span><span>$8k</span><span>$10k</span></div></th></tr></thead>
         <tbody>
           {lightRows.map((r) => (
             <tr>
               <th scope="row"><a href={`/listings/${r.id}/`}>{r.name}</a>{lightRows.filter((x) => x.id === r.id).length > 1 && <span class="small"><br />{r.rate.label}</span>}</th>
               <td data-label="Published" class="num">{fmtRange(r.rate.low, r.rate.high)}</td>
-              <td data-label="Basis"><span class={`badge ${r.basis}`}>{BASIS[r.basis].label}</span></td>
+              <td data-label="Basis"><span class={`tag ${r.basis}`}>{BASIS[r.basis].label}</span></td>
               <td data-label="Range">
                 <div class="bar" aria-hidden="true">
                   <span class={`fill ${r.basis}`} style={`left:${pct(r.rate.low)}%;width:${r.rate.high === null ? 1.5 : Math.max(1.5, pct(r.rate.high) - pct(r.rate.low))}%`}></span>
@@ -74,7 +100,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pu
           {withRates.map((l) => (
             <tr>
               <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a></th>
-              <td><span class={`badge ${l.data.rateBasis}`}>{BASIS[l.data.rateBasis].label}</span></td>
+              <td><span class={`tag ${l.data.rateBasis}`}>{BASIS[l.data.rateBasis].label}</span></td>
               {shown.map((c) => <td class="num">{cell(l, c.id) || '-'}</td>)}
             </tr>
           ))}
@@ -100,6 +126,11 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pu
         </tbody>
       </table>
     </div>
+
+    <h2>Common questions</h2>
+    <dl class="faq">
+      {faq.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+    </dl>
 
     <h2>How to use this</h2>
     <ul>

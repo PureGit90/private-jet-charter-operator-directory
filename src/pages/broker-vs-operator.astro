@@ -10,7 +10,7 @@ const brokers = by('broker'), markets = by('marketplace'), ops = by('operator');
 const explicit = listings.filter((l) => l.data.operatorNamed === 'says-yes');
 const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Private jet charter broker or operator: who flies the plane' };
 ---
-<BaseLayout title="Private jet charter: broker or operator, who flies the plane" description="Most private jet charter brands describe themselves as brokers. What the difference is, what each provider says it is, and the questions that identify the operator before you pay." jsonLd={jsonLd}>
+<BaseLayout title="Private Jet Charter Broker vs Operator: Who Flies the Plane" description={`Most charter brands call themselves brokers. What each of ${listings.length} providers says it is, and five questions that name the operator before you pay.`} jsonLd={jsonLd}>
   <div class="wrap prose">
     <p class="crumbs"><a href="/">Home</a> / Broker or operator</p>
     <h1>Broker or operator: who actually flies the plane</h1>
@@ -25,10 +25,10 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
 
     <h2>What the {listings.length} providers say they are</h2>
     <p>From each provider's own pages, read on {DATA_DATE_LABEL}. We use the provider's wording, not ours.</p>
-    <div class="cards">
-      <div class="card"><h3>{brokers.length} brokers</h3><p>{ROLES.broker.note}</p></div>
-      <div class="card"><h3>{markets.length} marketplaces or platforms</h3><p>{ROLES.marketplace.note} JetFinder, Linear Air, Villiers and Airacer do not say plainly whether they operate aircraft, so their label is our reading.</p></div>
-      <div class="card"><h3>{ops.length} operators</h3><p>{ROLES.operator.note} This sample is built from consumer-facing providers with online price pages, so it leans to brokers by design. It is not a count of the market.</p></div>
+    <div class="two">
+      <div><h3>{brokers.length} brokers</h3><p>{ROLES.broker.note}</p></div>
+      <div><h3>{markets.length} marketplaces or platforms</h3><p>{ROLES.marketplace.note} JetFinder, Linear Air, Villiers and Airacer do not say plainly whether they operate aircraft, so their label is our reading.</p></div>
+      <div><h3>{ops.length} operators</h3><p>{ROLES.operator.note} This sample is built from consumer-facing providers with online price pages, so it leans to brokers by design. It is not a count of the market.</p></div>
     </div>
 
     <h2>Does the provider say who the operator is?</h2>

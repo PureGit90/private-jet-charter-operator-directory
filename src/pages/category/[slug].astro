@@ -11,7 +11,7 @@ const { cat } = Astro.props;
 const all = (await getCollection('listings')).sort(alpha);
 const listings = all.filter((l) => l.data.category === cat.name);
 ---
-<BaseLayout title={cat.name} description={cat.intro}>
+<BaseLayout title={cat.slug === 'operators' ? 'Private Jet Charter Operators With Their Own Fleet' : 'Private Jet Charter Brokers and Marketplaces Compared'} description={`${listings.length} providers in this group, what each says it is, what it publishes about price and which fees it names. ${cat.intro.split('. ')[0]}.`}>
   <div class="wrap prose wide">
     <p class="crumbs"><a href="/">Home</a> / {cat.name}</p>
     <h1>{cat.name}</h1>
@@ -24,9 +24,9 @@ const listings = all.filter((l) => l.data.category === cat.name);
           {listings.map((l) => (
             <tr>
               <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a></th>
-              <td data-label="Says it is a"><span class={`badge ${l.data.role}`}>{ROLES[l.data.role].label}</span></td>
+              <td data-label="Says it is a"><span class={`tag ${l.data.role}`}>{ROLES[l.data.role].label}</span></td>
               <td data-label="Publishes">{PUBLISHES[l.data.publishes].label}</td>
-              <td data-label="Hourly basis"><span class={`badge ${l.data.rateBasis}`}>{BASIS[l.data.rateBasis].label}</span></td>
+              <td data-label="Hourly basis"><span class={`tag ${l.data.rateBasis}`}>{BASIS[l.data.rateBasis].label}</span></td>
             </tr>
           ))}
         </tbody>

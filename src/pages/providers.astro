@@ -6,7 +6,7 @@ import { alpha } from '../lib/rates';
 
 const listings = (await getCollection('listings')).sort(alpha);
 ---
-<BaseLayout title="All private jet charter providers" description={`${listings.length} private jet charter providers: whether each says it is a broker or an operator, what price it publishes, and what it names as extra.`}>
+<BaseLayout title={`Private Jet Charter Companies Compared: ${listings.length} Providers`} description={`${listings.length} private jet charter companies: broker or operator, what each publishes about price, and the fees it names. Alphabetical, with sources.`}>
   <div class="wrap prose wide">
     <p class="crumbs"><a href="/">Home</a> / All providers</p>
     <h1>All {listings.length} providers</h1>
@@ -30,9 +30,9 @@ const listings = (await getCollection('listings')).sort(alpha);
           {listings.map((l) => (
             <tr data-role={l.data.role} data-pub={l.data.publishes}>
               <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a><br /><span class="small">{categoryByName(l.data.category)?.short}</span></th>
-              <td data-label="Says it is a"><span class={`badge ${l.data.role}`}>{ROLES[l.data.role].label}</span></td>
+              <td data-label="Says it is a"><span class={`tag ${l.data.role}`}>{ROLES[l.data.role].label}</span></td>
               <td data-label="Publishes">{PUBLISHES[l.data.publishes].label}</td>
-              <td data-label="Hourly basis"><span class={`badge ${l.data.rateBasis}`}>{BASIS[l.data.rateBasis].label}</span></td>
+              <td data-label="Hourly basis"><span class={`tag ${l.data.rateBasis}`}>{BASIS[l.data.rateBasis].label}</span></td>
               <td data-label="Operator named before booking?">{l.data.operatorNamed === 'says-yes' ? 'Says yes' : 'Not stated on pages we read'}</td>
             </tr>
           ))}
