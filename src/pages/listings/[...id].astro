@@ -36,6 +36,7 @@ const jsonLd = [
     <p class="lead">{d.summary}</p>
     <p><a class="btn" href={href} rel={rel} target="_blank">Request a quote from {d.name}</a></p>
     <p class="small">Opens {d.name}'s own site. Ask for an itemized total in writing.</p>
+    {d.affiliateUrl && <p class="small"><strong>Affiliate link:</strong> if you book through the button above, we may earn a commission at no extra cost to you. It does not change what we say about {d.name}. See the <a href="/affiliate-disclosure/">affiliate disclosure</a>.</p>}
 
     <div class="panel">
       <h2>What sets it apart</h2>
