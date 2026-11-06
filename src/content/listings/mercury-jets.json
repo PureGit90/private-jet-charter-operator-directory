@@ -1,6 +1,6 @@
 {
   "directoryType": "service-provider",
-  "lastChecked": "2026-10-03",
+  "lastChecked": "2026-11-05",
   "watchOut": [
     "The range for \"mid-sized or super-mid-sized\" is a single band, so it cannot tell you which of the two costs more."
   ],

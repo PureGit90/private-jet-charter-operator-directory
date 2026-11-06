@@ -31,7 +31,7 @@ const jsonLd = [
       <span class={`tag ${d.role}`}>{ROLES[d.role].label}</span>
       <span class="tag">{PUBLISHES[d.publishes].label}</span>
       <span class={`tag ${d.rateBasis}`}>{BASIS[d.rateBasis].label}</span>
-      <span class="tag">Read {d.lastChecked}</span>
+      <span class="tag">Prices checked {d.lastChecked}</span>
     </div>
     <p class="lead">{d.summary}</p>
     <p><a class="btn" href={href} rel={rel} target="_blank">Request a quote from {d.name}</a></p>

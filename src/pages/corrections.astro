@@ -3,7 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { CONTACT_EMAIL, DATA_DATE_LABEL } from '../lib/site';
 
 // One entry per correction: { date: 'YYYY-MM-DD', listing: 'provider name', what: 'what changed and why' }.
-const log: { date: string; listing: string; what: string }[] = [];
+const log: { date: string; listing: string; what: string }[] = [
+  { date: '2026-11-05', listing: 'Stratos Jets', what: 'Its pricing page was rebuilt: a new eight-row hourly table ($5,648 to $22,910, up from $4,000 to $18,500), quotes now described as all-in, and the itemized landing, handling, fuel and segment fee amounts removed. Listing and the fees page updated.' },
+  { date: '2026-11-05', listing: 'Jet Partners', what: 'Every planning range was lowered (light jets now $4,750 to $7,000 an hour, were $6,800 to $9,900) and its worked Teterboro to Miami example is now $14,000 to $27,000. Listing updated.' },
+];
 ---
 <BaseLayout title="Corrections and Updates | Charter Prices Compared" description="How to report a wrong or out-of-date price on this site, how we check it, and a log of every correction we have made.">
   <div class="wrap prose">
@@ -22,7 +25,7 @@ const log: { date: string; listing: string; what: string }[] = [];
     </ol>
 
     <h2>How often we re-read</h2>
-    <p>Every listing shows the date we read it. We aim to re-read every provider's pages at least once a quarter, and sooner when a reader reports a change. The first full read was {DATA_DATE_LABEL}.</p>
+    <p>Every listing shows the date we read it. We re-read every provider's pages once a month, and sooner when a reader reports a change. The latest full read was {DATA_DATE_LABEL}.</p>
 
     <h2>Correction log</h2>
     {log.length === 0 ? (

@@ -11,8 +11,8 @@ export const NOINDEX = import.meta.env.PUBLIC_NOINDEX !== 'false';
 // Contact address shown on the legal and corrections pages; pages omit the line when null.
 export const CONTACT_EMAIL: string | null = 'sunshinesolutions305@outlook.com';
 
-export const DATA_DATE = '2026-10-03';
-export const DATA_DATE_LABEL = 'October 3, 2026';
+export const DATA_DATE = '2026-11-05';
+export const DATA_DATE_LABEL = 'November 5, 2026';
 
 export const CATEGORIES = [
   {

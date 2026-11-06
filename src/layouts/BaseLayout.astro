@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE_NAME, NOINDEX } from '../lib/site';
+import { SITE_NAME, NOINDEX, DATA_DATE_LABEL } from '../lib/site';
 import barlow600 from '@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-600-normal.woff2?url';
 import barlow700 from '@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-700-normal.woff2?url';
 import serif from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
@@ -74,7 +74,7 @@ const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
           <a href="/privacy-policy/">Privacy policy</a>
         </div>
         <p>Some links on this site may be affiliate links. We may earn a commission if you book through them, at no extra cost to you. See the <a href="/affiliate-disclosure/">affiliate disclosure</a>.</p>
-        <p>Published rates are marketing figures read from each provider's own pages, not quotes. Prices change. Data last read October 3, 2026.</p>
+        <p>Published rates are marketing figures read from each provider's own pages, not quotes. Prices change. Data last read {DATA_DATE_LABEL}.</p>
       </div>
     </footer>
   </body>

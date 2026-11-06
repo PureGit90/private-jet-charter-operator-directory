@@ -1,59 +1,65 @@
 {
   "directoryType": "service-provider",
-  "lastChecked": "2026-10-03",
+  "lastChecked": "2026-11-05",
   "watchOut": [
-    "The same page says a turboprop charter \"starts at around $2,000 an hour\" and a heavy jet is \"closer to $10,000 an hour\". Its table shows $4,000 to $4,900 and $15,077 to $16,664.",
-    "It states the segment fee as $4.50 per passenger. The FAA lists $5.30 for 2026."
+    "The hourly table is labeled as estimates. Compare the written all-in quote, not the table, against other providers.",
+    "Until October 2026 this page published a lower table ($4,000 to $18,500 an hour) and itemized fee ranges; both were replaced."
   ],
   "feesNamed": [
-    "Landing fees ($100 to $1,500 per flight, as stated)",
-    "Ramp and handling fees ($100 to $500)",
-    "Segment fee (stated as $4.50 per passenger)",
-    "Federal excise tax",
-    "Fuel surcharge (starts around $300 an hour when applicable)"
+    "Landing fees (included in the all-in quote)",
+    "Ramp and handling fees (included)",
+    "Segment fees (included)",
+    "Federal excise tax, 7.5% (included)",
+    "Catering, ground transportation and de-icing (quoted separately)"
   ],
   "rates": [
     {
       "category": "turboprop",
-      "label": "TurboProp",
-      "low": 4000,
-      "high": 4900
+      "label": "Turboprop",
+      "low": 5946,
+      "high": 7268
     },
     {
       "category": "very-light",
-      "label": "Very Light Jets",
-      "low": 5500,
-      "high": 6800
+      "label": "Very Light Jet",
+      "low": 5648,
+      "high": 6903
     },
     {
       "category": "light",
-      "label": "Light Jets",
-      "low": 8929,
-      "high": 9868
+      "label": "Light Jet",
+      "low": 7622,
+      "high": 9316
+    },
+    {
+      "category": "light",
+      "label": "Super Light Jet",
+      "low": 7740,
+      "high": 9460
     },
     {
       "category": "midsize",
-      "label": "Midsize Jets",
-      "low": 9793,
-      "high": 10824
+      "label": "Midsize Jet",
+      "low": 8300,
+      "high": 10144
     },
     {
       "category": "super-midsize",
-      "label": "Super Midsize Jets",
-      "low": 11786,
-      "high": 13027
+      "label": "Super Midsize Jet",
+      "low": 9684,
+      "high": 11836
     },
     {
       "category": "heavy",
-      "label": "Heavy",
-      "low": 15077,
-      "high": 16664
+      "label": "Heavy Jet",
+      "low": 12318,
+      "high": 15056
     },
     {
       "category": "ultra-long-range",
-      "label": "Ultra Long Range",
-      "low": 15200,
-      "high": 18500
+      "label": "Ultra Long Range Jet",
+      "low": 18744,
+      "high": 22910
     }
   ],
   "name": "Stratos Jets",
@@ -61,15 +67,15 @@
   "category": "Brokers and marketplaces",
   "role": "broker",
   "roleBasis": "Its homepage calls it an \"ARGUS-Certified Broker\" and describes \"brokering on-demand charter flights\".",
-  "summary": "Charter broker with a seven-row hourly table and an itemized fee list, at the high end of the published ranges.",
-  "differentiator": "Among the highest hourly ranges we read from any provider, and the page does not say whether they are base or all-in, which changes how to read the gap with the lower tables. It lists fee ranges for landing, handling, fuel and segment fees.",
+  "summary": "Charter broker with an eight-row hourly table and quotes it describes as all-in.",
+  "differentiator": "Its hourly table runs from $5,648 for very light jets to $22,910 for ultra long range, and it says every quote is all-in: charter rate, crew, landing, ramp and handling fees, federal excise tax and segment fees, with catering, ground transport and de-icing quoted separately. It calls the table itself estimates and does not say whether those hourly figures include the fees.",
   "publishes": "category-ranges",
   "rateBasis": "unstated",
-  "priceNote": "The page says a membership lets you lock an hourly rate across five aircraft categories and pay as you fly.",
+  "priceNote": "The page contrasts jet cards, which it says need prepaid deposits of $100K to $500K+, with paying market rates per trip and no upfront commitment.",
   "instantEstimate": "states-it-offers",
   "operatorDisclosure": "Says it runs an ARGUS CHEQ report on the aircraft before presenting a quote. The pages we read do not say whether the operator is named.",
-  "bestFor": "Buyers who want fee ranges laid out and are comparing a membership against on-demand.",
-  "skipIf": "You are using its table as a base rate to compare against other base-rate tables. The basis is not stated.",
+  "bestFor": "Buyers who want one all-in quote and a clear list of what it includes.",
+  "skipIf": "You are using its table as a base rate to compare against other base-rate tables. The basis of the table is not stated.",
   "sources": [
     "https://www.stratosjets.com/why-stratos/pricing/",
     "https://www.stratosjets.com/"
